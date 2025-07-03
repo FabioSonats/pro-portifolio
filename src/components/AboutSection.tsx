@@ -1,5 +1,5 @@
 
-import { User, MapPin, Calendar, Mail } from "lucide-react";
+import { User, MapPin, Calendar, Mail, Code, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const AboutSection = () => {

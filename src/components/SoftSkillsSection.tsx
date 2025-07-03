@@ -1,4 +1,3 @@
-
 import { Heart, MessageCircle, Target, Users as UsersIcon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -23,7 +22,7 @@ const SoftSkillsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section id="soft-skills" className="py-20 px-4">
       <div className="container max-w-6xl mx-auto">
         <Card className="bg-slate-800/50 border-green-500 border-2">
           <CardContent className="p-8">

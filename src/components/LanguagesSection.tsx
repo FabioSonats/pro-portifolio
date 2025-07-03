@@ -1,4 +1,3 @@
-
 import { Globe } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -17,7 +16,7 @@ const LanguagesSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section id="languages" className="py-20 px-4">
       <div className="container max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <Globe className="h-12 w-12 text-green-400 mx-auto mb-4" />

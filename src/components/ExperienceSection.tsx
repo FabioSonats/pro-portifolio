@@ -1,4 +1,3 @@
-
 import { Building, Calendar, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -15,7 +14,7 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section id="experience" className="py-20 px-4">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <Building className="h-12 w-12 text-green-400 mx-auto mb-4" />

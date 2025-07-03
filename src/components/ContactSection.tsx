@@ -15,18 +15,18 @@ const ContactSection = () => {
       icon: Linkedin,
       title: "LinkedIn",
       subtitle: "Conecte-se",
-      action: "#"
+      action: "https://www.linkedin.com/in/ferreira-f%C3%A1bio-98b4304a/"
     },
     {
       icon: Github,
       title: "GitHub",
       subtitle: "Projetos",
-      action: "#"
+      action: "https://github.com/FabioSonats"
     }
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section id="contact" className="py-20 px-4">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-green-400 mb-6">
@@ -41,14 +41,14 @@ const ContactSection = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           {contactMethods.map((method, index) => (
-            <Card key={index} className="bg-slate-900 border-green-500/20 hover:border-green-400/40 transition-all hover:transform hover:scale-105">
+            <Card key={index} className="bg-black/50 border-green-500/30 hover:border-green-400/60 transition-all hover:transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/20">
               <CardContent className="p-8 text-center">
                 <method.icon className="h-12 w-12 text-green-400 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2">{method.title}</h3>
                 <p className="text-gray-300 mb-6">{method.subtitle}</p>
                 <Button 
                   asChild
-                  className="bg-green-500 hover:bg-green-600 text-white w-full"
+                  className="bg-green-500 hover:bg-green-600 text-black font-bold w-full shadow-lg shadow-green-500/20"
                 >
                   <a href={method.action} target="_blank" rel="noopener noreferrer">
                     {method.title === "Email" ? "Enviar Email" : "Acessar"}

@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,12 +28,12 @@ const Header = () => {
   };
 
   const navItems = [
-    { label: 'Sobre', id: 'about' },
-    { label: 'Formação', id: 'education' },
-    { label: 'Experiência', id: 'experience' },
-    { label: 'Projetos', id: 'projects' },
-    { label: 'Habilidades', id: 'skills' },
-    { label: 'Contato', id: 'contact' }
+    { label: t('about'), id: 'about' },
+    { label: t('education'), id: 'education' },
+    { label: t('experience'), id: 'experience' },
+    { label: t('projects'), id: 'projects' },
+    { label: t('skills'), id: 'skills' },
+    { label: t('contact'), id: 'contact' }
   ];
 
   return (

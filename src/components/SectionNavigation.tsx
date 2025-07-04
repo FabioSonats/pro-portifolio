@@ -1,6 +1,7 @@
 
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface SectionNavigationProps {
   nextSection?: string;
@@ -9,6 +10,8 @@ interface SectionNavigationProps {
 }
 
 const SectionNavigation = ({ nextSection, prevSection, showBackToTop }: SectionNavigationProps) => {
+  const { t } = useLanguage();
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -40,7 +43,7 @@ const SectionNavigation = ({ nextSection, prevSection, showBackToTop }: SectionN
           onClick={scrollToTop}
         >
           <ChevronUp className="mr-2 h-4 w-4" />
-          Voltar ao Início
+          {t('backToTop')}
         </Button>
       )}
       

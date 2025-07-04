@@ -13,6 +13,14 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const translations = {
   en: {
+    // Navigation
+    about: "About",
+    education: "Education",
+    experience: "Experience",
+    projects: "Projects",
+    skills: "Skills",
+    contact: "Contact",
+    
     // Hero Section
     developer: "Developer",
     flutter: "Flutter",
@@ -21,7 +29,6 @@ const translations = {
     solutions: "solutions",
     viewFlutterProject: "View Flutter Web Project",
     reactProject: "ReactJS Project",
-    contact: "Contact",
     
     // About Section
     aboutMe: "About Me",
@@ -34,7 +41,6 @@ const translations = {
     cleanCode: "Clean Code",
     
     // Education Section
-    education: "Education",
     academicEducation: "Academic Education",
     certification: "Certification",
     pucPr: "Pontifical Catholic University of Paraná (PUC-PR)",
@@ -49,6 +55,13 @@ const translations = {
     tecnofit: "Tecnofit, Curitiba",
     period: "August 2022 – May 2024",
     presentialHybrid: "On-site/Hybrid",
+    flutterMaintenance: "Maintenance and development of features in Flutter applications",
+    whiteLabelImplementation: "Implementation of White Label applications using Flutter for multiple platforms (iOS and Android)",
+    agileCollaboration: "Collaboration in agile teams using SCRUM",
+    restApiIntegration: "Integration of REST APIs in Flutter projects",
+    architectureApplication: "Application of MVVM, BloC and Provider architectures with Dart in Flutter development",
+    versionControl: "Version control with Git",
+    appReplication: "Replication and customization of application models for different gyms",
     
     // Skills Section
     technicalSkills: "Technical Skills",
@@ -76,7 +89,6 @@ const translations = {
     intermediate: "Intermediate",
     
     // Projects Section
-    projects: "Projects",
     projectsSubtitle: "Some of the projects I've developed, demonstrating my skills in Flutter and ReactJS",
     highlight: "Highlight",
     flutterWebProject: "Flutter Web Project",
@@ -104,6 +116,14 @@ const translations = {
     backToTop: "Back to Top"
   },
   'pt-BR': {
+    // Navigation
+    about: "Sobre",
+    education: "Formação",
+    experience: "Experiência",
+    projects: "Projetos",
+    skills: "Habilidades",
+    contact: "Contato",
+    
     // Hero Section
     developer: "Desenvolvedor",
     flutter: "Flutter",
@@ -112,7 +132,6 @@ const translations = {
     solutions: "",
     viewFlutterProject: "Ver Projeto Flutter Web",
     reactProject: "Projeto ReactJS",
-    contact: "Contato",
     
     // About Section
     aboutMe: "Sobre Mim",
@@ -125,7 +144,6 @@ const translations = {
     cleanCode: "Clean Code",
     
     // Education Section
-    education: "Formação",
     academicEducation: "Formação Acadêmica",
     certification: "Certificação",
     pucPr: "Pontifícia Universidade Católica do Paraná (PUC-PR)",
@@ -140,6 +158,13 @@ const translations = {
     tecnofit: "Tecnofit, Curitiba",
     period: "Agosto 2022 – Maio 2024",
     presentialHybrid: "Presencial/Híbrido",
+    flutterMaintenance: "Manutenção e desenvolvimento de funcionalidades em aplicativos Flutter",
+    whiteLabelImplementation: "Implementação de aplicativos White Label utilizando Flutter para múltiplas plataformas (iOS e Android)",
+    agileCollaboration: "Colaboração em equipes ágeis usando SCRUM",
+    restApiIntegration: "Integração de APIs REST em projetos Flutter",
+    architectureApplication: "Aplicação de arquiteturas MVVM, BloC e Provider com Dart no desenvolvimento Flutter",
+    versionControl: "Controle de versão com Git",
+    appReplication: "Replicação e customização de modelos de aplicativos para diferentes academias",
     
     // Skills Section
     technicalSkills: "Habilidades Técnicas",
@@ -167,7 +192,6 @@ const translations = {
     intermediate: "Intermediário",
     
     // Projects Section
-    projects: "Projetos",
     projectsSubtitle: "Alguns dos projetos que desenvolvi, demonstrando minhas habilidades em Flutter e ReactJS",
     highlight: "Destaque",
     flutterWebProject: "Projeto Flutter Web",

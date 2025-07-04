@@ -41,6 +41,7 @@ const translations = {
     cleanCode: "Clean Code",
     
     // Education Section
+    education: "Education",
     academicEducation: "Academic Education",
     certification: "Certification",
     pucPr: "Pontifical Catholic University of Paraná (PUC-PR)",
@@ -89,6 +90,7 @@ const translations = {
     intermediate: "Intermediate",
     
     // Projects Section
+    projects: "Projects",
     projectsSubtitle: "Some of the projects I've developed, demonstrating my skills in Flutter and ReactJS",
     highlight: "Highlight",
     flutterWebProject: "Flutter Web Project",
@@ -144,6 +146,7 @@ const translations = {
     cleanCode: "Clean Code",
     
     // Education Section
+    education: "Formação",
     academicEducation: "Formação Acadêmica",
     certification: "Certificação",
     pucPr: "Pontifícia Universidade Católica do Paraná (PUC-PR)",
@@ -192,6 +195,7 @@ const translations = {
     intermediate: "Intermediário",
     
     // Projects Section
+    projects: "Projetos",
     projectsSubtitle: "Alguns dos projetos que desenvolvi, demonstrando minhas habilidades em Flutter e ReactJS",
     highlight: "Destaque",
     flutterWebProject: "Projeto Flutter Web",

@@ -1,27 +1,31 @@
+
 import { Code, Database, Smartphone, Globe } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SkillsSection = () => {
+  const { t } = useLanguage();
+  
   const skills = [
     {
       icon: Code,
-      title: "Desenvolvimento Frontend",
-      description: "Experiência com ReactJS, Flutter e desenvolvimento de interfaces responsivas e acessíveis."
+      title: t('frontendDevelopment'),
+      description: t('frontendDesc')
     },
     {
       icon: Database,
-      title: "Banco de Dados",
-      description: "Conhecimento em Firebase, SQLite e integração com APIs REST para gerenciamento de dados."
+      title: t('database'),
+      description: t('databaseDesc')
     },
     {
       icon: Smartphone,
-      title: "Desenvolvimento Mobile",
-      description: "Especializado em Flutter para criação de aplicativos cross-platform para iOS e Android."
+      title: t('mobileDevelopment'),
+      description: t('mobileDesc')
     },
     {
       icon: Globe,
-      title: "Web e Deploy",
-      description: "Habilidades em deploy de aplicações web, hospedagem e otimização para performance."
+      title: t('webDeploy'),
+      description: t('webDeployDesc')
     }
   ];
 
@@ -31,7 +35,7 @@ const SkillsSection = () => {
         <div className="text-center mb-16">
           <Code className="h-12 w-12 text-green-400 mx-auto mb-4" />
           <h2 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
-            Habilidades Técnicas
+            {t('technicalSkills')}
           </h2>
           <div className="w-16 h-1 bg-green-400 mx-auto"></div>
         </div>

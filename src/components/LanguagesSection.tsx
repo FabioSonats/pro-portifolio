@@ -1,16 +1,20 @@
+
 import { Globe } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const LanguagesSection = () => {
+  const { t } = useLanguage();
+  
   const languages = [
     {
-      language: "Português",
-      level: "Nativo",
+      language: t('portuguese'),
+      level: t('native'),
       flag: "🇧🇷"
     },
     {
-      language: "Inglês",
-      level: "Intermediário",
+      language: t('english'),
+      level: t('intermediate'),
       flag: "🇺🇸"
     }
   ];
@@ -21,7 +25,7 @@ const LanguagesSection = () => {
         <div className="text-center mb-16">
           <Globe className="h-12 w-12 text-green-400 mx-auto mb-4" />
           <h2 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
-            Idiomas
+            {t('languages')}
           </h2>
           <div className="w-16 h-1 bg-green-400 mx-auto"></div>
         </div>

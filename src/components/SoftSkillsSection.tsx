@@ -1,23 +1,27 @@
+
 import { Heart, MessageCircle, Target, Users as UsersIcon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SoftSkillsSection = () => {
+  const { t } = useLanguage();
+  
   const softSkills = [
     {
       icon: Heart,
-      title: "Criatividade na construção de soluções"
+      title: t('creativity')
     },
     {
       icon: MessageCircle,
-      title: "Comunicação clara e direta"
+      title: t('communication')
     },
     {
       icon: UsersIcon,
-      title: "Facilidade para aprender e compartilhar conhecimento"
+      title: t('learning')
     },
     {
       icon: Target,
-      title: "Compromisso com entregas colaborativas de alta qualidade"
+      title: t('commitment')
     }
   ];
 
@@ -29,7 +33,7 @@ const SoftSkillsSection = () => {
             <div className="text-center mb-12">
               <UsersIcon className="h-12 w-12 text-green-400 mx-auto mb-4" />
               <h2 className="text-3xl md:text-4xl font-bold text-green-400 mb-4">
-                Habilidades Interpessoais
+                {t('interpersonalSkills')}
               </h2>
               <div className="w-16 h-1 bg-green-400 mx-auto"></div>
             </div>

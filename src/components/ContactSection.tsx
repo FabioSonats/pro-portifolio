@@ -2,24 +2,27 @@
 import { Mail, Linkedin, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ContactSection = () => {
+  const { t } = useLanguage();
+  
   const contactMethods = [
     {
       icon: Mail,
-      title: "Email",
+      title: t('email'),
       subtitle: "ferreirafabio51@gmail.com",
       action: "mailto:ferreirafabio51@gmail.com"
     },
     {
       icon: Linkedin,
-      title: "LinkedIn",
-      subtitle: "Conecte-se",
+      title: t('linkedin'),
+      subtitle: t('connect'),
       action: "https://www.linkedin.com/in/ferreira-f%C3%A1bio-98b4304a/"
     },
     {
       icon: Github,
-      title: "GitHub",
+      title: t('github'),
       subtitle: "Projetos",
       action: "https://github.com/FabioSonats"
     }
@@ -30,12 +33,11 @@ const ContactSection = () => {
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-green-400 mb-6">
-            Vamos Trabalhar Juntos?
+            {t('workTogether')}
           </h2>
           <div className="w-16 h-1 bg-green-400 mx-auto mb-6"></div>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Estou sempre interessado em novos projetos e oportunidades. Entre em 
-            contato para discutirmos como posso contribuir com seu projeto.
+            {t('contactSubtitle')}
           </p>
         </div>
 
@@ -51,7 +53,7 @@ const ContactSection = () => {
                   className="bg-green-500 hover:bg-green-600 text-black font-bold w-full shadow-lg shadow-green-500/20"
                 >
                   <a href={method.action} target="_blank" rel="noopener noreferrer">
-                    {method.title === "Email" ? "Enviar Email" : "Acessar"}
+                    {method.title === t('email') ? t('sendEmail') : t('access')}
                   </a>
                 </Button>
               </CardContent>

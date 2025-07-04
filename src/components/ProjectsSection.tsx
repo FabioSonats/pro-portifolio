@@ -2,23 +2,26 @@
 import { ExternalLink, Code, Star } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ProjectsSection = () => {
+  const { t } = useLanguage();
+  
   const projects = [
     {
-      title: "Projeto Flutter Web",
-      subtitle: "Gerenciador de Leads",
-      status: "Projeto em desenvolvimento ativo",
-      description: "Sistema de gerenciamento de leads para empresa de marketing desenvolvido com Flutter Web. Projeto em construção que demonstra habilidades em desenvolvimento cross-platform e criação de soluções de negócio utilizando Flutter para web.",
+      title: t('flutterWebProject'),
+      subtitle: t('leadManager'),
+      status: t('activeProject'),
+      description: t('flutterProjectDesc'),
       technologies: ["Flutter Web", "Dart", "Firebase", "Responsive Design"],
       link: "https://comissao-flutter-web.web.app/",
-      highlight: "Mais de 90 aplicativos white label publicados - modelos replicáveis customizados para diferentes academias"
+      highlight: t('whiteLabel')
     },
     {
-      title: "Criador de Receitas",
-      subtitle: "Aplicação Web para Criação de Receitas",
-      status: "Projeto pessoal desenvolvido com ReactJS",
-      description: "Plataforma web onde os usuários podem criar e gerenciar receitas de qualquer tipo de refeição. Desenvolvida com ReactJS, demonstra habilidades em desenvolvimento frontend moderno e criação de interfaces intuitivas para gestão de conteúdo.",
+      title: t('recipeCreator'),
+      subtitle: t('webRecipeApp'),
+      status: t('personalProject'),
+      description: t('recipeProjectDesc'),
       technologies: ["ReactJS", "JavaScript", "CSS3", "HTML5", "GitHub Pages"],
       link: "https://chef-samurai-site.web.app/#/"
     }
@@ -30,12 +33,11 @@ const ProjectsSection = () => {
         <div className="text-center mb-16">
           <Code className="h-12 w-12 text-green-400 mx-auto mb-4" />
           <h2 className="text-4xl md:text-5xl font-bold text-green-400 mb-6">
-            Projetos
+            {t('projects')}
           </h2>
           <div className="w-16 h-1 bg-green-400 mx-auto mb-6"></div>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Alguns dos projetos que desenvolvi, demonstrando minhas habilidades 
-            em Flutter e ReactJS
+            {t('projectsSubtitle')}
           </p>
         </div>
 
@@ -45,7 +47,7 @@ const ProjectsSection = () => {
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Star className="h-6 w-6 text-green-400" />
-                <h3 className="text-xl font-bold text-green-400">Destaque</h3>
+                <h3 className="text-xl font-bold text-green-400">{t('highlight')}</h3>
               </div>
               <p className="text-gray-200 text-lg">
                 {projects[0].highlight}
@@ -75,7 +77,7 @@ const ProjectsSection = () => {
                   >
                     <a href={project.link} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      Ver Projeto
+                      {t('viewProject')}
                     </a>
                   </Button>
                 </div>

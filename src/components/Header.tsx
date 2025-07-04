@@ -1,48 +1,98 @@
 
-import { Mail, Linkedin, Github } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  const navItems = [
+    { label: 'Sobre', id: 'about' },
+    { label: 'Formação', id: 'education' },
+    { label: 'Experiência', id: 'experience' },
+    { label: 'Projetos', id: 'projects' },
+    { label: 'Habilidades', id: 'skills' },
+    { label: 'Contato', id: 'contact' }
+  ];
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-green-500/30">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-xl md:text-2xl font-bold text-green-400">Fábio Ferreira</h1>
-        
-        <div className="flex items-center gap-3">
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="text-gray-300 hover:text-green-400 hover:bg-green-400/10"
-            asChild
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-black/90 backdrop-blur-md border-b border-green-500/20' 
+        : 'bg-transparent'
+    }`}>
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          <div 
+            className="text-2xl font-bold text-green-400 cursor-pointer hover:text-green-300 transition-colors"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <a href="mailto:ferreirafabio51@gmail.com" target="_blank" rel="noopener noreferrer">
-              <Mail className="h-5 w-5" />
-            </a>
-          </Button>
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="text-gray-300 hover:text-green-400 hover:bg-green-400/10"
-            asChild
-          >
-            <a href="https://www.linkedin.com/in/ferreira-f%C3%A1bio-98b4304a/" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="h-5 w-5" />
-            </a>
-          </Button>
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="text-gray-300 hover:text-green-400 hover:bg-green-400/10"
-            asChild
-          >
-            <a href="https://github.com/FabioSonats" target="_blank" rel="noopener noreferrer">
-              <Github className="h-5 w-5" />
-            </a>
-          </Button>
-          <div className="w-10 h-10 bg-green-400 rounded-full flex items-center justify-center text-black font-bold">
-            F
+            {"<Fábio />"}
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-gray-300 hover:text-green-400 transition-colors duration-300 font-medium"
+              >
+                {item.label}
+              </button>
+            ))}
+            <LanguageSwitcher />
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageSwitcher />
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-green-400 hover:bg-green-400/10"
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
           </div>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <nav className="md:hidden mt-4 pb-4 border-t border-green-500/20">
+            <div className="flex flex-col space-y-4 pt-4">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-gray-300 hover:text-green-400 transition-colors duration-300 font-medium text-left"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </nav>
+        )}
       </div>
     </header>
   );

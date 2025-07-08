@@ -74,16 +74,10 @@ Dados do portfólio: ${JSON.stringify(portfolioData)}`
       body: JSON.stringify({
         contents: [
           {
+            role: "user",
             parts: [
               {
-                text: systemPrompt
-              }
-            ]
-          },
-          {
-            parts: [
-              {
-                text: message
+                text: `${systemPrompt}\n\nUsuário: ${message}`
               }
             ]
           }

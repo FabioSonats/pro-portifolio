@@ -149,7 +149,7 @@ const ChatBot = () => {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 w-96 h-[500px] z-50 max-h-[calc(100vh-2rem)]">
+    <div className="fixed bottom-4 right-4 w-80 sm:w-96 h-[500px] max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] z-50">
       <Card className="h-full bg-slate-900/95 border-green-500/30 backdrop-blur-sm">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
           <CardTitle className="text-green-400 flex items-center gap-2">

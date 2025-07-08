@@ -33,7 +33,7 @@ const ProjectsSection = () => {
         <div className="text-center mb-16">
           <Code className="h-12 w-12 text-green-400 mx-auto mb-4" />
           <h2 className="text-4xl md:text-5xl font-bold text-green-400 mb-6">
-            {t('projects')}
+            {t('projectsSection')}
           </h2>
           <div className="w-16 h-1 bg-green-400 mx-auto mb-6"></div>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">

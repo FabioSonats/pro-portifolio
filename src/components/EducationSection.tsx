@@ -12,7 +12,7 @@ const EducationSection = () => {
         <div className="text-center mb-16">
           <GraduationCap className="h-12 w-12 text-green-400 mx-auto mb-4" />
           <h2 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
-            {t('education')}
+            {t('educationSection')}
           </h2>
           <div className="w-16 h-1 bg-green-400 mx-auto"></div>
         </div>

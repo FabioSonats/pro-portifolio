@@ -12,6 +12,7 @@ import LanguagesSection from "@/components/LanguagesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import SectionNavigation from "@/components/SectionNavigation";
+import ChatBot from "@/components/ChatBot";
 
 const Index = () => {
   return (
@@ -49,6 +50,7 @@ const Index = () => {
       </main>
       
       <Footer />
+      <ChatBot />
     </div>
   );
 };

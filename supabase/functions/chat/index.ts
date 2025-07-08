@@ -93,11 +93,11 @@ PERFIL ATUAL:
 - Idiomas: Português (nativo), Inglês (intermediário), Espanhol (básico)
 
 INFORMAÇÕES DE CONTATO:
-- Email: contato@fabiohenrique.dev
-- LinkedIn: https://www.linkedin.com/in/ferreira-f%C3%A1bio-98b4304a/
-- GitHub: https://github.com/FabioSonats
-- Website: fabiohenrique.dev
-- WhatsApp: +55 42 99164-3802 (Link: https://wa.me/5542991643802)
+- Email: ferreirafabio51@gmail.com
+- LinkedIn: [a ser fornecido pelo Fábio]
+- GitHub: [a ser fornecido pelo Fábio]
+- Website: [a ser fornecido pelo Fábio]
+- WhatsApp: [a ser fornecido pelo Fábio]
 
 INSTRUÇÕES:
 1. Responda sempre em português brasileiro

@@ -13,8 +13,12 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import SectionNavigation from "@/components/SectionNavigation";
 import ChatBot from "@/components/ChatBot";
+import { useVisitTracker } from "@/hooks/useVisitTracker";
 
 const Index = () => {
+  // Track page visits
+  useVisitTracker();
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-x-hidden">
       <StarField />

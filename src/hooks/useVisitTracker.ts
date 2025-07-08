@@ -24,6 +24,12 @@ export const useVisitTracker = () => {
     }
 
     const trackVisit = async () => {
+      // Check if user has consented to tracking
+      const consent = localStorage.getItem('cookieConsent');
+      if (consent !== 'accepted') {
+        return;
+      }
+
       try {
         visitStartTime.current = Date.now();
         

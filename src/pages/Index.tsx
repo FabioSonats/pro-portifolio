@@ -13,6 +13,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import SectionNavigation from "@/components/SectionNavigation";
 import ChatBot from "@/components/ChatBot";
+import CookieConsent from "@/components/CookieConsent";
 import { useVisitTracker } from "@/hooks/useVisitTracker";
 
 const Index = () => {
@@ -55,6 +56,7 @@ const Index = () => {
       
       <Footer />
       <ChatBot />
+      <CookieConsent />
     </div>
   );
 };

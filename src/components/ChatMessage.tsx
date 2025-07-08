@@ -7,15 +7,12 @@ interface ChatMessageProps {
 
 const ChatMessage = ({ message }: ChatMessageProps) => {
   const formatMessageWithLinks = (text: string) => {
-    console.log('Formatando mensagem:', text);
     // Regex para detectar URLs (incluindo wa.me)
     const urlRegex = /(https?:\/\/[^\s\)]+)/g;
     const parts = text.split(urlRegex);
-    console.log('Partes da mensagem:', parts);
     
     return parts.map((part, index) => {
       if (part.match(urlRegex)) {
-        console.log('Link encontrado:', part);
         return (
           <a
             key={index}
@@ -28,7 +25,7 @@ const ChatMessage = ({ message }: ChatMessageProps) => {
           </a>
         );
       }
-      return part;
+      return <span key={index}>{part}</span>;
     });
   };
 

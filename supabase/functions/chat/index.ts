@@ -41,8 +41,16 @@ serve(async (req) => {
 INFORMAÇÕES DO PORTFÓLIO:
 - Formação: Análise e Desenvolvimento de Sistemas na PUC-PR (concluído)
 - Certificações: Desenvolvimento Web Full Stack (Udemy)
-- Tecnologias: React, Flutter, Node.js, Python, JavaScript, TypeScript, SQL
-- Experiência: Desenvolvimento de aplicações web e mobile, UI/UX Design
+- Tecnologias: React, Flutter, Node.js, Python, JavaScript, TypeScript, SQL, Git, HTML, CSS, Dart
+- Experiência Profissional: Desenvolvedor Flutter na Tecnofit (Agosto 2022 – Maio 2024)
+- Responsabilidades na Tecnofit: 
+  * Manutenção e desenvolvimento de funcionalidades em aplicativos Flutter
+  * Implementação de aplicativos White Label para múltiplas plataformas (iOS e Android)  
+  * Colaboração em equipes ágeis usando SCRUM
+  * Integração de APIs REST em projetos Flutter
+  * Aplicação de arquiteturas MVVM, BloC e Provider com Dart
+  * Controle de versão com Git
+  * Replicação e customização de modelos de aplicativos para diferentes academias
 - Projetos: Aplicações Flutter, sistemas web responsivos, integração com APIs
 - Soft Skills: Comunicação, trabalho em equipe, resolução de problemas, pensamento crítico
 - Idiomas: Português (nativo), Inglês (intermediário), Espanhol (básico)

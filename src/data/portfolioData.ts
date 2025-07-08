@@ -25,11 +25,27 @@ export const getPortfolioData = (language: string): PortfolioData => ({
   ],
   experience: {
     focus: language === 'pt-BR' 
-      ? 'Desenvolvimento de aplicações web e mobile' 
-      : 'Web and mobile application development',
+      ? 'Desenvolvedor Flutter na Tecnofit (Agosto 2022 – Maio 2024)' 
+      : 'Flutter Developer at Tecnofit (August 2022 – May 2024)',
     specialties: language === 'pt-BR'
-      ? ['UI/UX Design', 'Desenvolvimento Frontend', 'Desenvolvimento Backend', 'Integração de APIs']
-      : ['UI/UX Design', 'Frontend Development', 'Backend Development', 'API Integration']
+      ? [
+          'Manutenção e desenvolvimento de funcionalidades em aplicativos Flutter',
+          'Implementação de aplicativos White Label para múltiplas plataformas (iOS e Android)',
+          'Colaboração em equipes ágeis usando SCRUM',
+          'Integração de APIs REST em projetos Flutter',
+          'Aplicação de arquiteturas MVVM, BloC e Provider com Dart',
+          'Controle de versão com Git',
+          'Replicação e customização de modelos de aplicativos para diferentes academias'
+        ]
+      : [
+          'Maintenance and development of features in Flutter applications',
+          'Implementation of White Label applications for multiple platforms (iOS and Android)',
+          'Collaboration in agile teams using SCRUM',
+          'Integration of REST APIs in Flutter projects',
+          'Application of MVVM, BloC and Provider architectures with Dart',
+          'Version control with Git',
+          'Replication and customization of application models for different gyms'
+        ]
   },
   projects: language === 'pt-BR' 
     ? 'Aplicações Flutter, sistemas web responsivos, integração com APIs e desenvolvimento full-stack'

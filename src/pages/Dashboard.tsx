@@ -11,16 +11,17 @@ interface Visit {
   id: string;
   created_at: string;
   page_url: string;
-  user_agent: string;
-  referrer: string;
-  country: string;
-  city: string;
-  device_type: string;
-  browser: string;
-  screen_resolution: string;
-  language: string;
-  session_id: string;
-  duration: number;
+  user_agent: string | null;
+  referrer: string | null;
+  country: string | null;
+  city: string | null;
+  device_type: string | null;
+  browser: string | null;
+  screen_resolution: string | null;
+  language: string | null;
+  session_id: string | null;
+  duration: number | null;
+  ip_address: string | null;
 }
 
 const Dashboard = () => {
@@ -72,8 +73,22 @@ const Dashboard = () => {
   };
 
   const calculateStats = (visitsData: Visit[]) => {
-    const uniqueVisitors = new Set(visitsData.map(v => v.session_id)).size;
-    const avgDuration = visitsData.reduce((acc, v) => acc + v.duration, 0) / visitsData.length || 0;
+    // Se não há dados, mostrar zeros ao invés de NaN
+    if (visitsData.length === 0) {
+      setStats({
+        totalVisits: 0,
+        uniqueVisitors: 0,
+        avgDuration: 0,
+        topPages: [],
+        deviceStats: [],
+        browserStats: [],
+        dailyVisits: []
+      });
+      return;
+    }
+
+    const uniqueVisitors = new Set(visitsData.map(v => v.session_id || v.ip_address)).size;
+    const avgDuration = visitsData.reduce((acc, v) => acc + (v.duration || 0), 0) / visitsData.length;
     
     // Top pages
     const pageCount = visitsData.reduce((acc, v) => {
@@ -87,18 +102,20 @@ const Dashboard = () => {
       .sort((a, b) => b.count - a.count)
       .slice(0, 5);
 
-    // Device stats
+    // Device stats - tratar valores nulos
     const deviceCount = visitsData.reduce((acc, v) => {
-      acc[v.device_type] = (acc[v.device_type] || 0) + 1;
+      const device = v.device_type || 'Desconhecido';
+      acc[device] = (acc[device] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
     
     const deviceStats = Object.entries(deviceCount)
       .map(([device, count]) => ({ device, count }));
 
-    // Browser stats
+    // Browser stats - tratar valores nulos
     const browserCount = visitsData.reduce((acc, v) => {
-      acc[v.browser] = (acc[v.browser] || 0) + 1;
+      const browser = v.browser || 'Desconhecido';
+      acc[browser] = (acc[browser] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
     
@@ -116,7 +133,10 @@ const Dashboard = () => {
       const count = visitsData.filter(v => 
         v.created_at.split('T')[0] === date
       ).length;
-      return { date, visits: count };
+      return { 
+        date: new Date(date).toLocaleDateString('pt-BR', { weekday: 'short', day: '2-digit' }), 
+        visits: count 
+      };
     });
 
     setStats({

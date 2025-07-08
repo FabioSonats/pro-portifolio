@@ -58,6 +58,7 @@ EXPERIÊNCIA PROFISSIONAL DIVERSIFICADA:
 - Barista no Espresso Curitiba por 1 ano, participando de eventos como Psicodália e Festival de Jazz de Curitiba
 - Gerente de cafeteria na Coffeeterie (renomada rede curitibana) - liderou equipes e desenvolveu visão de negócios
 - Desenvolvedor Flutter na Tecnofit (Agosto 2022 – Maio 2024)
+- ATUAL: Treinador do Hard Rock Curitiba, treinando equipes de bar com excelência em coquetelaria e atendimento ao cliente
 
 RESPONSABILIDADES NA TECNOFIT:
 - Manutenção e desenvolvimento de funcionalidades em aplicativos Flutter

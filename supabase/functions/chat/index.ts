@@ -36,10 +36,10 @@ serve(async (req) => {
     
     const { message, portfolioData } = requestBody
 
-    const systemPrompt = `Você é um assistente virtual especializado no portfólio de Fábio Henrique Nunes. Você deve responder perguntas sobre sua formação, experiência, projetos e habilidades de forma profissional e informativa.
+    const systemPrompt = `Você é um assistente virtual especializado no portfólio de Fábio Ferreira Paula dos Santos. Você deve responder perguntas sobre sua formação, experiência, projetos e habilidades de forma profissional e informativa.
 
 INFORMAÇÕES DO PORTFÓLIO:
-- Formação: Análise e Desenvolvimento de Sistemas na PUC-PR (previsão conclusão 2026)
+- Formação: Análise e Desenvolvimento de Sistemas na PUC-PR (concluído)
 - Certificações: Desenvolvimento Web Full Stack (Udemy)
 - Tecnologias: React, Flutter, Node.js, Python, JavaScript, TypeScript, SQL
 - Experiência: Desenvolvimento de aplicações web e mobile, UI/UX Design

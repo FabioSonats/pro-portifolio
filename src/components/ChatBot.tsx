@@ -34,8 +34,8 @@ const ChatBot = () => {
       const welcomeMessage: Message = {
         id: '1',
         text: language === 'pt-BR' 
-          ? 'Olá! Sou o assistente virtual do portfólio do Fábio. Posso responder perguntas sobre sua formação, experiência, projetos e habilidades. Como posso ajudá-lo?'
-          : 'Hello! I am the virtual assistant for Fábio\'s portfolio. I can answer questions about his education, experience, projects, and skills. How can I help you?',
+          ? 'Olá! Sou o assistente virtual do portfólio do Fábio Ferreira Paula dos Santos. Posso responder perguntas sobre sua formação, experiência, projetos e habilidades. Como posso ajudá-lo?'
+          : 'Hello! I am the virtual assistant for Fábio Ferreira Paula dos Santos\'s portfolio. I can answer questions about his education, experience, projects, and skills. How can I help you?',
         isUser: false,
         timestamp: new Date()
       };
@@ -47,7 +47,7 @@ const ChatBot = () => {
     education: {
       degree: language === 'pt-BR' ? 'Análise e Desenvolvimento de Sistemas' : 'Systems Analysis and Development',
       institution: 'PUC-PR',
-      completion: '2026',
+      completion: language === 'pt-BR' ? 'Concluído' : 'Completed',
       certifications: [
         {
           name: language === 'pt-BR' ? 'Desenvolvimento Web Full Stack' : 'Full Stack Web Development',

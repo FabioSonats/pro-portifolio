@@ -166,8 +166,8 @@ const ChatBot = () => {
           </Button>
         </CardHeader>
         
-        <CardContent className="flex flex-col h-full pb-4">
-          <div className="flex-1 overflow-y-auto space-y-4 mb-4">
+        <CardContent className="flex flex-col h-[calc(100%-4rem)] p-4">
+          <div className="flex-1 overflow-y-auto space-y-4 mb-4 pr-2">
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -212,7 +212,7 @@ const ChatBot = () => {
             <div ref={messagesEndRef} />
           </div>
           
-          <div className="flex gap-2">
+          <div className="flex gap-2 mt-auto">
             <Input
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}

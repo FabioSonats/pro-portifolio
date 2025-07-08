@@ -1,25 +1,30 @@
 import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, Send, X, User, Bot } from 'lucide-react';
+import { MessageCircle, X, Bot } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { supabase } from '@/integrations/supabase/client';
-
-interface Message {
-  id: string;
-  text: string;
-  isUser: boolean;
-  timestamp: Date;
-}
+import { useChatBot } from '@/hooks/useChatBot';
+import { getPortfolioData } from '@/data/portfolioData';
+import ChatMessage from './ChatMessage';
+import ChatInput from './ChatInput';
+import ChatLoadingIndicator from './ChatLoadingIndicator';
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [inputMessage, setInputMessage] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
+
+  const portfolioData = getPortfolioData(language);
+  
+  const {
+    messages,
+    inputMessage,
+    setInputMessage,
+    isLoading,
+    sendMessage,
+    handleKeyPress,
+    initializeWelcomeMessage
+  } = useChatBot({ language, portfolioData });
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -31,122 +36,9 @@ const ChatBot = () => {
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      const welcomeMessage: Message = {
-        id: '1',
-        text: language === 'pt-BR' 
-          ? 'Olá! Sou o assistente virtual do portfólio do Fábio Ferreira Paula dos Santos. Posso responder perguntas sobre sua formação, experiência, projetos e habilidades. Como posso ajudá-lo?'
-          : 'Hello! I am the virtual assistant for Fábio Ferreira Paula dos Santos\'s portfolio. I can answer questions about his education, experience, projects, and skills. How can I help you?',
-        isUser: false,
-        timestamp: new Date()
-      };
-      setMessages([welcomeMessage]);
+      initializeWelcomeMessage();
     }
-  }, [isOpen, language]);
-
-  const portfolioData = {
-    education: {
-      degree: language === 'pt-BR' ? 'Análise e Desenvolvimento de Sistemas' : 'Systems Analysis and Development',
-      institution: 'PUC-PR',
-      completion: language === 'pt-BR' ? 'Concluído' : 'Completed',
-      certifications: [
-        {
-          name: language === 'pt-BR' ? 'Desenvolvimento Web Full Stack' : 'Full Stack Web Development',
-          provider: 'Udemy'
-        }
-      ]
-    },
-    skills: {
-      technical: ['React', 'Flutter', 'Node.js', 'Python', 'JavaScript', 'TypeScript', 'SQL', 'Git', 'HTML', 'CSS'],
-      soft: language === 'pt-BR' 
-        ? ['Comunicação', 'Trabalho em equipe', 'Resolução de problemas', 'Pensamento crítico', 'Criatividade']
-        : ['Communication', 'Teamwork', 'Problem solving', 'Critical thinking', 'Creativity']
-    },
-    languages: [
-      { name: 'Português', level: language === 'pt-BR' ? 'Nativo' : 'Native' },
-      { name: language === 'pt-BR' ? 'Inglês' : 'English', level: language === 'pt-BR' ? 'Intermediário' : 'Intermediate' },
-      { name: language === 'pt-BR' ? 'Espanhol' : 'Spanish', level: language === 'pt-BR' ? 'Básico' : 'Basic' }
-    ],
-    experience: {
-      focus: language === 'pt-BR' 
-        ? 'Desenvolvimento de aplicações web e mobile' 
-        : 'Web and mobile application development',
-      specialties: language === 'pt-BR'
-        ? ['UI/UX Design', 'Desenvolvimento Frontend', 'Desenvolvimento Backend', 'Integração de APIs']
-        : ['UI/UX Design', 'Frontend Development', 'Backend Development', 'API Integration']
-    },
-    projects: language === 'pt-BR' 
-      ? 'Aplicações Flutter, sistemas web responsivos, integração com APIs e desenvolvimento full-stack'
-      : 'Flutter applications, responsive web systems, API integration and full-stack development',
-    contact: {
-      email: 'contato@fabiohenrique.dev',
-      linkedin: 'https://www.linkedin.com/in/ferreira-f%C3%A1bio-98b4304a/',
-      github: 'https://github.com/FabioSonats',
-      website: 'fabiohenrique.dev',
-      whatsapp: '+55 42 99164-3802',
-      whatsappLink: 'https://wa.me/5542991643802'
-    }
-  };
-
-  const sendMessage = async () => {
-    if (!inputMessage.trim()) return;
-
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      text: inputMessage,
-      isUser: true,
-      timestamp: new Date()
-    };
-
-    setMessages(prev => [...prev, userMessage]);
-    setInputMessage('');
-    setIsLoading(true);
-
-    try {
-      const { data, error } = await supabase.functions.invoke('chat', {
-        body: {
-          message: inputMessage,
-          portfolioData: portfolioData
-        }
-      });
-
-      if (error) {
-        throw error;
-      }
-
-      const aiMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: data.response,
-        isUser: false,
-        timestamp: new Date()
-      };
-
-      setMessages(prev => [...prev, aiMessage]);
-    } catch (error) {
-      // Reduce console errors by only logging in development
-      if (process.env.NODE_ENV === 'development') {
-        console.error('Error calling chat function:', error);
-      }
-      
-      const errorMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: language === 'pt-BR' 
-          ? 'Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente mais tarde.'
-          : 'Sorry, an error occurred while processing your message. Please try again later.',
-        isUser: false,
-        timestamp: new Date()
-      };
-
-      setMessages(prev => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      sendMessage();
-    }
-  };
+  }, [isOpen, language, messages.length, initializeWelcomeMessage]);
 
   if (!isOpen) {
     return (
@@ -180,66 +72,22 @@ const ChatBot = () => {
         <CardContent className="flex flex-col h-[calc(100%-4rem)] p-4">
           <div className="flex-1 overflow-y-auto space-y-4 mb-4 pr-2">
             {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
-              >
-                <div
-                  className={`max-w-[80%] rounded-lg px-3 py-2 text-sm ${
-                    message.isUser
-                      ? 'bg-green-500 text-white'
-                      : 'bg-slate-700 text-gray-100'
-                  }`}
-                >
-                  <div className="flex items-start gap-2">
-                    {!message.isUser && <Bot className="w-4 h-4 mt-0.5 text-green-400" />}
-                    <div className="flex-1">
-                      <p className="whitespace-pre-wrap">{message.text}</p>
-                      <p className="text-xs opacity-70 mt-1">
-                        {message.timestamp.toLocaleTimeString()}
-                      </p>
-                    </div>
-                    {message.isUser && <User className="w-4 h-4 mt-0.5" />}
-                  </div>
-                </div>
-              </div>
+              <ChatMessage key={message.id} message={message} />
             ))}
             
-            {isLoading && (
-              <div className="flex justify-start">
-                <div className="bg-slate-700 text-gray-100 rounded-lg px-3 py-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Bot className="w-4 h-4 text-green-400" />
-                    <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-bounce"></div>
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+            {isLoading && <ChatLoadingIndicator />}
             
             <div ref={messagesEndRef} />
           </div>
           
-          <div className="flex gap-2 mt-auto">
-            <Input
-              value={inputMessage}
-              onChange={(e) => setInputMessage(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder={language === 'pt-BR' ? 'Digite sua pergunta...' : 'Type your question...'}
-              className="flex-1 bg-slate-800 border-slate-600 text-white placeholder-gray-400"
-              disabled={isLoading}
-            />
-            <Button
-              onClick={sendMessage}
-              disabled={isLoading || !inputMessage.trim()}
-              className="bg-green-500 hover:bg-green-600 text-white"
-            >
-              <Send className="w-4 h-4" />
-            </Button>
-          </div>
+          <ChatInput
+            value={inputMessage}
+            onChange={setInputMessage}
+            onSend={sendMessage}
+            onKeyPress={handleKeyPress}
+            isLoading={isLoading}
+            placeholder={language === 'pt-BR' ? 'Digite sua pergunta...' : 'Type your question...'}
+          />
         </CardContent>
       </Card>
     </div>

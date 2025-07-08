@@ -9,12 +9,16 @@ const corsHeaders = {
 const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY')
 
 serve(async (req) => {
+  console.log('Chat function called with method:', req.method)
+  
   // Handle CORS
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
   }
 
   try {
+    console.log('Checking GEMINI_API_KEY:', GEMINI_API_KEY ? 'Present' : 'Missing')
+    
     if (!GEMINI_API_KEY) {
       console.error('GEMINI_API_KEY not configured')
       return new Response(
@@ -26,7 +30,11 @@ serve(async (req) => {
       )
     }
 
-    const { message, portfolioData } = await req.json()
+    console.log('Parsing request body...')
+    const requestBody = await req.json()
+    console.log('Request body parsed:', { hasMessage: !!requestBody.message, hasPortfolioData: !!requestBody.portfolioData })
+    
+    const { message, portfolioData } = requestBody
 
     const systemPrompt = `Você é um assistente virtual especializado no portfólio de Fábio Henrique Nunes. Você deve responder perguntas sobre sua formação, experiência, projetos e habilidades de forma profissional e informativa.
 
@@ -57,6 +65,7 @@ EXEMPLOS DE PERGUNTAS QUE VOCÊ PODE RESPONDER:
 
 Dados do portfólio: ${JSON.stringify(portfolioData)}`
 
+    console.log('Calling Gemini API...')
     const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=' + GEMINI_API_KEY, {
       method: 'POST',
       headers: {
@@ -92,7 +101,9 @@ Dados do portfólio: ${JSON.stringify(portfolioData)}`
       throw new Error(`Gemini API error: ${response.status}`)
     }
 
+    console.log('Gemini API response OK, parsing JSON...')
     const data = await response.json()
+    console.log('AI Response extracted:', !!data.candidates?.[0]?.content?.parts?.[0]?.text)
     const aiResponse = data.candidates?.[0]?.content?.parts?.[0]?.text
 
     if (!aiResponse) {

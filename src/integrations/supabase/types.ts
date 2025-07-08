@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      visits: {
+        Row: {
+          browser: string | null
+          city: string | null
+          country: string | null
+          created_at: string
+          device_type: string | null
+          duration: number | null
+          id: string
+          ip_address: string | null
+          language: string | null
+          page_url: string
+          referrer: string | null
+          screen_resolution: string | null
+          session_id: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          browser?: string | null
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          device_type?: string | null
+          duration?: number | null
+          id?: string
+          ip_address?: string | null
+          language?: string | null
+          page_url: string
+          referrer?: string | null
+          screen_resolution?: string | null
+          session_id?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          browser?: string | null
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          device_type?: string | null
+          duration?: number | null
+          id?: string
+          ip_address?: string | null
+          language?: string | null
+          page_url?: string
+          referrer?: string | null
+          screen_resolution?: string | null
+          session_id?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

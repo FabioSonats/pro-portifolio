@@ -77,6 +77,8 @@ EXEMPLOS DE PERGUNTAS QUE VOCÊ PODE RESPONDER:
 - "Qual o email do Fábio?"
 - "Tem LinkedIn dele?"
 
+IMPORTANTE: Este é o portfólio oficial do Fábio Ferreira Paula dos Santos (fabiohenrique.dev). Não recomende outros portfólios ou sites, pois este É o portfólio correto dele.
+
 Dados do portfólio: ${JSON.stringify(portfolioData)}`
 
     console.log('Calling Gemini API...')

@@ -76,7 +76,13 @@ const ChatBot = () => {
     },
     projects: language === 'pt-BR' 
       ? 'Aplicações Flutter, sistemas web responsivos, integração com APIs e desenvolvimento full-stack'
-      : 'Flutter applications, responsive web systems, API integration and full-stack development'
+      : 'Flutter applications, responsive web systems, API integration and full-stack development',
+    contact: {
+      email: 'contato@fabiohenrique.dev',
+      linkedin: 'https://www.linkedin.com/in/ferreira-f%C3%A1bio-98b4304a/',
+      github: 'https://github.com/FabioSonats',
+      website: 'fabiohenrique.dev'
+    }
   };
 
   const sendMessage = async () => {

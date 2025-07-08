@@ -69,7 +69,7 @@ Dados do portfólio: ${JSON.stringify(portfolioData)}`
     const geminiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=' + GEMINI_API_KEY
     console.log('Gemini URL (without key):', 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=***')
     
-    const requestBody = {
+    const geminiRequestBody = {
       contents: [
         {
           role: "user",
@@ -86,14 +86,14 @@ Dados do portfólio: ${JSON.stringify(portfolioData)}`
       },
     }
     
-    console.log('Request body structure:', JSON.stringify(requestBody, null, 2))
+    console.log('Request body structure:', JSON.stringify(geminiRequestBody, null, 2))
     
     const response = await fetch(geminiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(requestBody),
+      body: JSON.stringify(geminiRequestBody),
     })
 
     if (!response.ok) {

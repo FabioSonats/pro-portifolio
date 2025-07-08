@@ -81,7 +81,9 @@ const ChatBot = () => {
       email: 'contato@fabiohenrique.dev',
       linkedin: 'https://www.linkedin.com/in/ferreira-f%C3%A1bio-98b4304a/',
       github: 'https://github.com/FabioSonats',
-      website: 'fabiohenrique.dev'
+      website: 'fabiohenrique.dev',
+      whatsapp: '+55 42 99164-3802',
+      whatsappLink: 'https://wa.me/5542991643802'
     }
   };
 

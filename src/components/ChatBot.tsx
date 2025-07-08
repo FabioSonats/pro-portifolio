@@ -114,7 +114,10 @@ const ChatBot = () => {
 
       setMessages(prev => [...prev, aiMessage]);
     } catch (error) {
-      console.error('Error calling chat function:', error);
+      // Reduce console errors by only logging in development
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error calling chat function:', error);
+      }
       
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),

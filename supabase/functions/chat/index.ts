@@ -164,10 +164,12 @@ Dados do portfólio: ${JSON.stringify(portfolioData)}`
 
     console.log('Gemini API response OK, parsing JSON...')
     const data = await response.json()
+    console.log('Full Gemini response:', JSON.stringify(data, null, 2))
     console.log('AI Response extracted:', !!data.candidates?.[0]?.content?.parts?.[0]?.text)
     const aiResponse = data.candidates?.[0]?.content?.parts?.[0]?.text
 
     if (!aiResponse) {
+      console.error('No AI response found in data:', data)
       throw new Error('No response from AI')
     }
 

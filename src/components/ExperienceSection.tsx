@@ -25,7 +25,7 @@ const ExperienceSection = () => {
                   <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center">
                     <Building className="h-4 w-4 text-slate-900" />
                   </div>
-                  <CardTitle className="text-2xl text-white">{t('flutterDeveloper')}</CardTitle>
+                  <CardTitle className="text-2xl text-white">{t('Developer')}</CardTitle>
                 </div>
                 <div className="flex flex-wrap gap-4 text-sm text-gray-300">
                   <div className="flex items-center gap-2">

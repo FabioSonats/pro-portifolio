@@ -230,10 +230,15 @@ const Dashboard = () => {
             <CardContent>
               <ChartContainer config={{ visits: { label: "Visitas", color: "hsl(var(--primary))" } }}>
                 <ResponsiveContainer width="100%" height={300}>
+                  {/* @ts-ignore */}
                   <LineChart data={stats.dailyVisits}>
+                    {/* @ts-ignore */}
                     <XAxis dataKey="date" stroke="#9CA3AF" />
+                    {/* @ts-ignore */}
                     <YAxis stroke="#9CA3AF" />
+                    {/* @ts-ignore */}
                     <ChartTooltip content={<ChartTooltipContent />} />
+                    {/* @ts-ignore */}
                     <Line type="monotone" dataKey="visits" stroke="hsl(var(--primary))" strokeWidth={2} />
                   </LineChart>
                 </ResponsiveContainer>

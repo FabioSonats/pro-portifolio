@@ -19,8 +19,8 @@ const PrivacyPolicy = () => {
           content: `Em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei 13.709/2018), este documento informa como coletamos, utilizamos e protegemos seus dados pessoais.
 
 **Responsável pelo Tratamento:**
-Fábio Henrique Nunes
-Email: contato@fabiohenrique.dev
+Fábio Ferreira Paula dos Santos
+Email: ferreirafabio51@gmail.com
 
 **Dados Coletados:**
 - Informações de navegação (IP, navegador, sistema operacional)
@@ -64,7 +64,7 @@ Email: contato@fabiohenrique.dev
 - **Revisão:** Revisão de decisões automatizadas
 
 **Para exercer seus direitos:**
-Email: privacidade@fabiohenrique.dev
+Email: p.sonats@gmail.com
 Prazo de resposta: até 15 dias úteis`
         }
       ],
@@ -108,8 +108,8 @@ O usuário é responsável pelo uso adequado do site e pelo respeito aos direito
 Email: privacidade@fabiohenrique.dev
 
 **Contato Geral:**
-Email: contato@fabiohenrique.dev
-LinkedIn: linkedin.com/in/fabio-henrique-nunes
+Email: ferreirafabio51@gmail.com
+LinkedIn: https://www.linkedin.com/in/ferreira-f%C3%A1bio-98b4304a/
 
 **Denúncias LGPD:**
 Você pode reportar violações à ANPD (Autoridade Nacional de Proteção de Dados) através do site: gov.br/anpd`
@@ -125,8 +125,8 @@ Você pode reportar violações à ANPD (Autoridade Nacional de Proteção de Da
           content: `In compliance with the General Data Protection Law (LGPD - Law 13.709/2018), this document informs how we collect, use and protect your personal data.
 
 **Data Controller:**
-Fábio Henrique Nunes
-Email: contact@fabiohenrique.dev
+Fábio Ferreira Paula dos Santos
+Email: ferreirafabio51@gmail.com
 
 **Data Collected:**
 - Navigation information (IP, browser, operating system)
@@ -170,7 +170,7 @@ Email: contact@fabiohenrique.dev
 - **Review:** Review automated decisions
 
 **To exercise your rights:**
-Email: privacy@fabiohenrique.dev
+Email: ferreirafabio51@gmail.com
 Response time: up to 15 business days`
         }
       ],
@@ -211,11 +211,11 @@ The user is responsible for proper use of the site and respect for copyright.`
       contact: {
         title: 'Contact',
         content: `**Privacy Questions:**
-Email: privacy@fabiohenrique.dev
+Email: ferreirafabio51@gmail.com
 
 **General Contact:**
-Email: contact@fabiohenrique.dev
-LinkedIn: linkedin.com/in/fabio-henrique-nunes
+Email: ferreirafabio51@gmail.com
+LinkedIn: https://www.linkedin.com/in/ferreira-f%C3%A1bio-98b4304a/
 
 **LGPD Reports:**
 You can report violations to ANPD (National Data Protection Authority) through the website: gov.br/anpd`

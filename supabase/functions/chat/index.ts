@@ -1,5 +1,5 @@
 
-import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
+
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -7,7 +7,13 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
 }
 
-const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY')
+interface GlobalWithGemini {
+  GEMINI_API_KEY?: string;
+}
+
+const GEMINI_API_KEY = typeof globalThis.Deno !== "undefined" && globalThis.Deno.env && globalThis.Deno.env.get
+  ? globalThis.Deno.env.get('GEMINI_API_KEY')
+  : ((globalThis as GlobalWithGemini).GEMINI_API_KEY ?? "");
 
 serve(async (req) => {
   console.log('Chat function called with method:', req.method)
@@ -102,7 +108,7 @@ EXEMPLOS DE PERGUNTAS:
 - "Qual foi sua experiência na Tecnofit?"
 - "Como posso entrar em contato?"
 
-IMPORTANTE: Este é o portfólio oficial do Fábio Ferreira (fabiohenrique.dev).
+IMPORTANTE: Este é o portfólio oficial do Fábio Ferreira (https://pro-portifolio.lovable.app/).
 
 Dados do portfólio: ${JSON.stringify(portfolioData)}`
 
@@ -175,3 +181,7 @@ Dados do portfólio: ${JSON.stringify(portfolioData)}`
     )
   }
 })
+function serve(arg0: (req: any) => Promise<Response>) {
+  throw new Error("Function not implemented.");
+}
+

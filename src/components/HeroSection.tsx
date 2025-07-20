@@ -15,13 +15,10 @@ const HeroSection = () => {
             <Zap className="h-8 w-8 animate-pulse" />
           </div>
         </div>
-        
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title">
-          <span className="text-white">{t('developer')}</span>
           <br />
-          <span className="text-green-400">{t('flutter')}</span>
+           <span className="text-white">{t('developer')}</span>
         </h1>
-        
         <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in">
           {t('specialized')} {" "}
           <span className="text-green-400">{t('crossPlatform')}</span>

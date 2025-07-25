@@ -223,7 +223,7 @@ You can report violations to ANPD (National Data Protection Authority) through t
     }
   };
 
-  const currentContent = content[language];
+  const currentContent = content[language] || content['en-US'];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">

@@ -18,6 +18,14 @@ const ProjectsSection = () => {
       highlight: t('whiteLabel')
     },
     {
+      title: t('pizzaMenu'),
+      subtitle: t('pizzaMenuSubtitle'),
+      status: t('personalProject'),
+      description: t('pizzaMenuDesc'),
+      technologies: ["ReactJS", "JavaScript", "CSS3", "HTML5", "Responsive Design"],
+      link: "https://fabiosonats.github.io/more_pizza/"
+    },
+    {
       title: t('recipeCreator'),
       subtitle: t('webRecipeApp'),
       status: t('personalProject'),

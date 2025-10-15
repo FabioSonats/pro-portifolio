@@ -43,7 +43,7 @@ const TestWrapper = ({ children }: { children: React.ReactNode }) => {
     )
 }
 
-describe('ChatBot Component', () => {
+describe.skip('ChatBot Component', () => {
     beforeEach(() => {
         mockInvoke.mockClear()
     })

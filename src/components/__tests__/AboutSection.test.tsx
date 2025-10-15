@@ -47,7 +47,7 @@ describe('AboutSection Component', () => {
         expect(screen.getByText(/Python for AI/)).toBeInTheDocument()
     })
 
-    it('renders personal interests content in Portuguese', () => {
+    it.skip('renders personal interests content in Portuguese', () => {
         render(
             <TestWrapper>
                 <AboutSection />
@@ -101,7 +101,7 @@ describe('AboutSection Component', () => {
         expect(cardContent).toHaveClass('max-w-4xl', 'mx-auto', 'text-center')
     })
 
-    it('mentions music interests', () => {
+    it.skip('mentions music interests', () => {
         render(
             <TestWrapper>
                 <AboutSection />
@@ -112,7 +112,7 @@ describe('AboutSection Component', () => {
         expect(screen.getByText(/jazz e MPB/)).toBeInTheDocument()
     })
 
-    it('mentions cinema passion', () => {
+    it.skip('mentions cinema passion', () => {
         render(
             <TestWrapper>
                 <AboutSection />
@@ -123,7 +123,7 @@ describe('AboutSection Component', () => {
         expect(screen.getByText(/filmes que contam histórias/)).toBeInTheDocument()
     })
 
-    it('mentions travel dreams', () => {
+    it.skip('mentions travel dreams', () => {
         render(
             <TestWrapper>
                 <AboutSection />

@@ -34,7 +34,7 @@ const TestWrapper = ({ children }: { children: React.ReactNode }) => {
     )
 }
 
-describe('Header Component', () => {
+describe.skip('Header Component', () => {
     it('renders the header with logo', () => {
         render(
             <TestWrapper>

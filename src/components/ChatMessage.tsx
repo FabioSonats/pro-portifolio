@@ -10,7 +10,7 @@ const ChatMessage = ({ message }: ChatMessageProps) => {
     // Regex para detectar URLs (incluindo wa.me)
     const urlRegex = /(https?:\/\/[^\s\)]+)/g;
     const parts = text.split(urlRegex);
-    
+
     return parts.map((part, index) => {
       if (part.match(urlRegex)) {
         return (
@@ -32,14 +32,13 @@ const ChatMessage = ({ message }: ChatMessageProps) => {
   return (
     <div className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}>
       <div
-        className={`max-w-[80%] rounded-lg px-3 py-2 text-sm ${
-          message.isUser
-            ? 'bg-green-500 text-white'
+        className={`max-w-[80%] px-3 py-2 text-sm ${message.isUser
+            ? 'bg-sky-500 text-white'
             : 'bg-slate-700 text-gray-100'
-        }`}
+          }`}
       >
         <div className="flex items-start gap-2">
-          {!message.isUser && <Bot className="w-4 h-4 mt-0.5 text-green-400" />}
+          {!message.isUser && <Bot className="w-4 h-4 mt-0.5 text-sky-400" />}
           <div className="flex-1">
             <p className="whitespace-pre-wrap">
               {formatMessageWithLinks(message.text)}

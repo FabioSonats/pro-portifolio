@@ -1,6 +1,8 @@
 
 
 
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
@@ -17,30 +19,65 @@ const GEMINI_API_KEY = typeof globalThis.Deno !== "undefined" && globalThis.Deno
 
 serve(async (req) => {
   console.log('Chat function called with method:', req.method)
-  
+
   // Handle CORS
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
   }
 
+  // Handle GET requests (health check)
+  if (req.method === 'GET') {
+    return new Response(
+      JSON.stringify({ status: 'ok', message: 'Chat function is running' }),
+      {
+        status: 200,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      }
+    )
+  }
+
+  // Only handle POST requests for chat
+  if (req.method !== 'POST') {
+    return new Response(
+      JSON.stringify({ error: 'Method not allowed' }),
+      {
+        status: 405,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      }
+    )
+  }
+
   try {
     console.log('Checking GEMINI_API_KEY:', GEMINI_API_KEY ? 'Present' : 'Missing')
-    
+
     if (!GEMINI_API_KEY) {
       console.error('GEMINI_API_KEY not configured')
       return new Response(
         JSON.stringify({ error: 'API key not configured' }),
-        { 
-          status: 500, 
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         }
       )
     }
 
     console.log('Parsing request body...')
-    const requestBody = await req.json()
+    let requestBody;
+    try {
+      requestBody = await req.json()
+    } catch (parseError) {
+      console.error('Error parsing JSON:', parseError)
+      return new Response(
+        JSON.stringify({ error: 'Invalid JSON in request body' }),
+        {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        }
+      )
+    }
+
     console.log('Request body parsed:', { hasMessage: !!requestBody.message, hasPortfolioData: !!requestBody.portfolioData })
-    
+
     const { message, portfolioData } = requestBody
 
     const systemPrompt = `Você é um assistente virtual especializado no portfólio de Fábio Ferreira. Você deve responder perguntas sobre sua formação, experiência, projetos, habilidades e trajetória profissional de forma concisa e técnica.
@@ -53,27 +90,31 @@ FORMAÇÃO ACADÊMICA:
 - Background acadêmico inicial: Matemática Industrial (UFPR) e Ciências Sociais (PUC-PR)
 
 EXPERIÊNCIA TÉCNICA PRINCIPAL:
-- Desenvolvedor Flutter na Tecnofit (Agosto 2022 – Maio 2024)
-- Desenvolvimento de aplicativos mobile multiplataforma (iOS e Android)
-- Implementação de aplicativos White Label para diferentes clientes
+- Desenvolvedor Full Stack (2022 – Presente)
+- Especializado em Python para IA e ReactJS com Tailwind CSS
+- Desenvolvimento de agentes de IA e automação com Python
+- Criação de aplicações web modernas (Pizza, Receitas, Portfólio) com ReactJS
+- Experiência anterior em Flutter na Tecnofit (Agosto 2022 – Maio 2024)
+- Implementação de aplicativos White Label multiplataforma
 - Integração de APIs REST e desenvolvimento com arquiteturas MVVM, BloC e Provider
 - Experiência com metodologias ágeis (SCRUM) e controle de versão (Git)
 
-STACK TECNOLÓGICO:
-- Mobile: Flutter, Dart
-- Web: React, JavaScript, TypeScript, HTML, CSS
+STACK TECNOLÓGICO ATUAL:
+- IA: Python para agentes de IA, automação e machine learning
+- Frontend: ReactJS, Tailwind CSS, JavaScript, TypeScript
+- Mobile: Flutter, Dart (experiência anterior)
 - Backend: Node.js, Python
-- Banco de dados: SQL
-- Ferramentas: Git, APIs REST
+- Banco de dados: SQL, consultas complexas e otimização
+- DevOps: Docker, Deploy em produção, Git avançado
+- Testes: Testes automatizados (Jest, Cypress)
+- Metodologias: Scrum, Kanban
 
-RESPONSABILIDADES TÉCNICAS NA TECNOFIT:
-- Manutenção e desenvolvimento de funcionalidades em aplicativos Flutter
-- Implementação de aplicativos White Label para múltiplas plataformas
-- Colaboração em equipes ágeis usando SCRUM
-- Integração de APIs REST em projetos Flutter
-- Aplicação de arquiteturas MVVM, BloC e Provider com Dart
-- Controle de versão com Git
-- Replicação e customização de modelos de aplicativos para diferentes academias
+PROJETOS DESTACADOS:
+- Site de Pizza desenvolvido com ReactJS
+- Site de Receitas com ReactJS
+- Este portfólio desenvolvido com ReactJS e Tailwind CSS
+- Agentes de IA desenvolvidos com Python
+- Aplicativos Flutter White Label (experiência anterior)
 
 SOFT SKILLS (desenvolvidas através de experiência diversificada):
 - Comunicação e trabalho em equipe (experiência em atendimento e liderança)
@@ -113,9 +154,9 @@ IMPORTANTE: Este é o portfólio oficial do Fábio Ferreira (https://pro-portifo
 Dados do portfólio: ${JSON.stringify(portfolioData)}`
 
     console.log('Calling Gemini API...')
-    const geminiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=' + GEMINI_API_KEY
-    console.log('Gemini URL (without key):', 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=***')
-    
+    const geminiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + GEMINI_API_KEY
+    console.log('Gemini URL (without key):', 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=***')
+
     const geminiRequestBody = {
       contents: [
         {
@@ -132,9 +173,9 @@ Dados do portfólio: ${JSON.stringify(portfolioData)}`
         maxOutputTokens: 1000,
       },
     }
-    
+
     console.log('Request body structure:', JSON.stringify(geminiRequestBody, null, 2))
-    
+
     const response = await fetch(geminiUrl, {
       method: 'POST',
       headers: {
@@ -162,26 +203,23 @@ Dados do portfólio: ${JSON.stringify(portfolioData)}`
 
     return new Response(
       JSON.stringify({ response: aiResponse }),
-      { 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+      {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       }
     )
 
   } catch (error) {
     console.error('Error in chat function:', error)
     return new Response(
-      JSON.stringify({ 
+      JSON.stringify({
         error: 'Erro interno do servidor. Tente novamente mais tarde.',
-        details: error.message 
+        details: error.message
       }),
-      { 
-        status: 500, 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+      {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       }
     )
   }
 })
-function serve(arg0: (req: any) => Promise<Response>) {
-  throw new Error("Function not implemented.");
-}
 

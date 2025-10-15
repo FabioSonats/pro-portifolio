@@ -16,8 +16,8 @@ export const useChatBot = ({ language, portfolioData }: UseChatBotProps) => {
     const welcomeMessage: Message = {
       id: '1',
       text: language === 'pt-BR' 
-        ? 'Olá! Sou o assistente virtual do portfólio do Fábio Ferreira Paula dos Santos. Posso responder perguntas sobre sua formação, experiência, projetos e habilidades. Como posso ajudá-lo?'
-        : 'Hello! I am the virtual assistant for Fábio Ferreira Paula dos Santos\'s portfolio. I can answer questions about his education, experience, projects, and skills. How can I help you?',
+        ? 'Olá! Sou o assistente virtual do portfólio do Fábio. Posso responder perguntas sobre sua formação, experiência, projetos e habilidades. Como posso ajudá-lo?'
+        : 'Hello! I am the virtual assistant for Fábio\'s portfolio. I can answer questions about his education, experience, projects, and skills. How can I help you?',
       isUser: false,
       timestamp: new Date()
     };

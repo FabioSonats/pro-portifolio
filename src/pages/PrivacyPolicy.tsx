@@ -4,11 +4,17 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Shield, Eye, Database, UserCheck } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+
 const PrivacyPolicy = () => {
   const { language } = useLanguage();
   const navigate = useNavigate();
 
+  
+
+
   const content = {
+
+    
     'pt-BR': {
       title: 'Política de Privacidade e Termos de Uso',
       lastUpdated: 'Última atualização: 8 de janeiro de 2025',
@@ -105,7 +111,7 @@ O usuário é responsável pelo uso adequado do site e pelo respeito aos direito
       contact: {
         title: 'Contato',
         content: `**Dúvidas sobre Privacidade:**
-Email: privacidade@fabiohenrique.dev
+Email: ferreirafabio51@gmai.com
 
 **Contato Geral:**
 Email: ferreirafabio51@gmail.com
@@ -222,6 +228,8 @@ You can report violations to ANPD (National Data Protection Authority) through t
       }
     }
   };
+  
+  
 
   const currentContent = content[language] || content['en-US'];
 

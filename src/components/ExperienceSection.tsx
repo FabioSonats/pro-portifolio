@@ -1,44 +1,38 @@
 
-import { Building, Calendar, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const ExperienceSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
-    <section id="experience" className="py-20 px-4">
+    <section id="experience" className="py-20 px-4 bg-white">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <Building className="h-12 w-12 text-green-400 mx-auto mb-4" />
-          <h2 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
             {t('professionalExperience')}
           </h2>
-          <div className="w-16 h-1 bg-green-400 mx-auto"></div>
+          <div className="w-16 h-1 bg-sky-500 mx-auto"></div>
         </div>
 
-        <Card className="bg-slate-800/50 border-green-500 border-2 hover:border-green-400 transition-colors">
+        <Card className="bg-white border-2 border-sky-100 hover:border-sky-200 transition-all duration-300 shadow-lg hover:shadow-xl">
           <CardHeader>
             <div className="flex items-start justify-between flex-col lg:flex-row gap-4">
               <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center">
-                    <Building className="h-4 w-4 text-slate-900" />
-                  </div>
-                  <CardTitle className="text-2xl text-white">{t('Developer')}</CardTitle>
+                <div className="mb-2">
+                  <CardTitle className="text-2xl text-slate-800">
+                    {language === 'pt-BR' ? 'Desenvolvedor Full Stack' : 'Full Stack Developer'}
+                  </CardTitle>
                 </div>
-                <div className="flex flex-wrap gap-4 text-sm text-gray-300">
-                  <div className="flex items-center gap-2">
-                    <Building className="h-4 w-4" />
-                    <span>{t('tecnofit')}</span>
+                <div className="flex flex-wrap gap-4 text-sm text-slate-600">
+                  <div>
+                    <span>{language === 'pt-BR' ? 'Python para IA e ReactJS' : 'Python for AI and ReactJS'}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    <span>{t('period')}</span>
+                  <div>
+                    <span>{language === 'pt-BR' ? '2022 – Presente' : '2022 – Present'}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4" />
-                    <span>{t('presentialHybrid')}</span>
+                  <div>
+                    <span>{language === 'pt-BR' ? 'Remoto' : 'Remote'}</span>
                   </div>
                 </div>
               </div>
@@ -47,32 +41,46 @@ const ExperienceSection = () => {
           <CardContent>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-gray-300">{t('flutterMaintenance')}</p>
+                <div className="w-2 h-2 bg-sky-500 mt-2 flex-shrink-0"></div>
+                <p className="text-slate-600">
+                  {language === 'pt-BR' ? 'Desenvolvimento de agentes de IA e automação com Python' : 'Development of AI agents and automation with Python'}
+                </p>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-gray-300">{t('whiteLabelImplementation')}</p>
+                <div className="w-2 h-2 bg-sky-500 mt-2 flex-shrink-0"></div>
+                <p className="text-slate-600">
+                  {language === 'pt-BR' ? 'Criação de aplicações web modernas com ReactJS e Tailwind CSS' : 'Creation of modern web applications with ReactJS and Tailwind CSS'}
+                </p>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-gray-300">{t('agileCollaboration')}</p>
+                <div className="w-2 h-2 bg-sky-500 mt-2 flex-shrink-0"></div>
+                <p className="text-slate-600">
+                  {language === 'pt-BR' ? 'Desenvolvimento de sites responsivos (Pizza, Receitas, Portfólio)' : 'Development of responsive websites (Pizza, Recipes, Portfolio)'}
+                </p>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-gray-300">{t('restApiIntegration')}</p>
+                <div className="w-2 h-2 bg-sky-500 mt-2 flex-shrink-0"></div>
+                <p className="text-slate-600">
+                  {language === 'pt-BR' ? 'Implementação de sistemas de IA para automação de processos' : 'Implementation of AI systems for process automation'}
+                </p>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-gray-300">{t('architectureApplication')}</p>
+                <div className="w-2 h-2 bg-sky-500 mt-2 flex-shrink-0"></div>
+                <p className="text-slate-600">
+                  {language === 'pt-BR' ? 'Integração de APIs REST e serviços de terceiros' : 'Integration of REST APIs and third-party services'}
+                </p>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-gray-300">{t('versionControl')}</p>
+                <div className="w-2 h-2 bg-sky-500 mt-2 flex-shrink-0"></div>
+                <p className="text-slate-600">
+                  {language === 'pt-BR' ? 'Controle de versão com Git e metodologias ágeis' : 'Version control with Git and agile methodologies'}
+                </p>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-gray-300">{t('appReplication')}</p>
+                <div className="w-2 h-2 bg-sky-500 mt-2 flex-shrink-0"></div>
+                <p className="text-slate-600">
+                  {language === 'pt-BR' ? 'Experiência anterior em Flutter para desenvolvimento mobile' : 'Previous experience in Flutter for mobile development'}
+                </p>
               </div>
             </div>
           </CardContent>

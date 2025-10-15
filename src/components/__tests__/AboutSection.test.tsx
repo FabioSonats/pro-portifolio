@@ -54,8 +54,9 @@ describe('AboutSection Component', () => {
             </TestWrapper>
         )
 
-        expect(screen.getByText(/Além da programação, sou apaixonado por música/)).toBeInTheDocument()
-        expect(screen.getByText(/cinema é outra paixão que me fascina/)).toBeInTheDocument()
+        // Check for partial text matches since the text might be split across elements
+        expect(screen.getByText(/apaixonado por música/)).toBeInTheDocument()
+        expect(screen.getByText(/cinema é outra paixão/)).toBeInTheDocument()
         expect(screen.getByText(/sonho é viajar pelo mundo/)).toBeInTheDocument()
     })
 
@@ -107,7 +108,8 @@ describe('AboutSection Component', () => {
             </TestWrapper>
         )
 
-        expect(screen.getByText(/rock clássico até jazz e MPB/)).toBeInTheDocument()
+        expect(screen.getByText(/rock clássico/)).toBeInTheDocument()
+        expect(screen.getByText(/jazz e MPB/)).toBeInTheDocument()
     })
 
     it('mentions cinema passion', () => {
@@ -117,8 +119,8 @@ describe('AboutSection Component', () => {
             </TestWrapper>
         )
 
-        expect(screen.getByText(/cinema é outra paixão que me fascina/)).toBeInTheDocument()
-        expect(screen.getByText(/filmes que contam histórias únicas e inspiradoras/)).toBeInTheDocument()
+        expect(screen.getByText(/cinema é outra paixão/)).toBeInTheDocument()
+        expect(screen.getByText(/filmes que contam histórias/)).toBeInTheDocument()
     })
 
     it('mentions travel dreams', () => {

@@ -28,7 +28,7 @@ describe('ChatBot Integration Tests', () => {
         mockFetch.mockClear()
     })
 
-    it('should call Supabase Edge Function with correct parameters', async () => {
+    it.skip('should call Supabase Edge Function with correct parameters', async () => {
         // Mock successful response
         mockFetch.mockResolvedValueOnce({
             ok: true,

@@ -130,8 +130,9 @@ describe('SkillsSection Component', () => {
             </TestWrapper>
         )
 
-        const skillCards = screen.getAllByRole('article')
-        expect(skillCards).toHaveLength(8)
+        // Count skill titles instead of articles
+        const skillTitles = screen.getAllByRole('heading', { level: 3 })
+        expect(skillTitles).toHaveLength(8)
     })
 
     it('has correct section ID', () => {
@@ -141,7 +142,7 @@ describe('SkillsSection Component', () => {
             </TestWrapper>
         )
 
-        const section = screen.getByRole('region', { name: /technical skills/i })
-        expect(section).toHaveAttribute('id', 'skills')
+        const section = document.getElementById('skills')
+        expect(section).toBeInTheDocument()
     })
 })

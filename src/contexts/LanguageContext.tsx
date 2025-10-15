@@ -20,7 +20,7 @@ const translations = {
     projects: "Projects",
     skills: "Skills",
     contact: "Contact",
-    
+
     // Hero Section
     developer: "Developer",
     flutter: "Flutter",
@@ -29,17 +29,17 @@ const translations = {
     solutions: "solutions",
     viewFlutterProject: "View Flutter Web Project",
     reactProject: "ReactJS Project",
-    
+
     // About Section
     aboutMe: "About Me",
     aboutTitle: "A little more about me",
-    aboutText1: "I am a Flutter developer passionate about creating innovative and efficient solutions. With experience in mobile app development and user interfaces, I constantly seek to improve my skills and deliver high-quality results.",
+    aboutText1: "I am a Full Stack Developer passionate about creating innovative and efficient solutions. With experience in Python for AI, ReactJS, Flutter, SQL scripts, and web development, I constantly seek to improve my skills and deliver high-quality results.",
     aboutText2: "My passion for technology drives me to explore new tools and approaches, always looking for creative and efficient solutions to the challenges I encounter.",
     mySkills: "My Skills",
     crossPlatformDev: "Cross-Platform Development",
     uiUxDesign: "UI/UX Design",
     cleanCode: "Clean Code",
-    
+
     // Education Section
     educationSection: "Education",
     academicEducation: "Academic Education",
@@ -49,7 +49,7 @@ const translations = {
     completionForecast: "Completion Forecast: Graduated",
     udemy: "Udemy",
     webDevelopment: "Web Development with ReactJs",
-    
+
     // Experience Section
     professionalExperience: "Professional Experience",
     flutterDeveloper: "Flutter Developer",
@@ -63,7 +63,7 @@ const translations = {
     architectureApplication: "Application of MVVM, BloC and Provider architectures with Dart in Flutter development",
     versionControl: "Version control with Git",
     appReplication: "Replication and customization of application models for different gyms",
-    
+
     // Skills Section
     technicalSkills: "Technical Skills",
     frontendDevelopment: "Frontend Development",
@@ -74,25 +74,30 @@ const translations = {
     mobileDesc: "Specialized in Flutter for creating cross-platform applications for iOS and Android.",
     webDeploy: "Web and Deploy",
     webDeployDesc: "Skills in web application deployment, hosting and performance optimization.",
-    
+
     // Soft Skills Section
     interpersonalSkills: "Interpersonal Skills",
     creativity: "Creativity in building solutions",
     communication: "Clear and direct communication",
     learning: "Ease of learning and sharing knowledge",
     commitment: "Commitment to high-quality collaborative deliveries",
-    
+
     // Languages Section
     languages: "Languages",
     portuguese: "Portuguese",
     english: "English",
     native: "Native",
     intermediate: "Intermediate",
-    
+
     // Projects Section
     projectsSection: "Projects",
     projectsSubtitle: "Some of the projects I've developed, demonstrating my skills in Flutter and ReactJS",
     highlight: "Highlight",
+    pizzaProject: "Pizza System",
+    pizzaProjectSubtitle: "Complete Pizza Delivery Platform",
+    completedProject: "Completed Project",
+    pizzaProjectDesc: "Complete pizza delivery system developed with ReactJS and Tailwind CSS. Includes product catalog, shopping cart, order system and modern responsive interface. Demonstrates modern frontend development skills and e-commerce creation.",
+    pizzaProjectHighlight: "Complete delivery system with shopping cart, product catalog and modern interface - developed with ReactJS and Tailwind CSS",
     flutterWebProject: "Flutter Web Project",
     leadManager: "Lead Manager",
     activeProject: "Project in active development",
@@ -103,7 +108,7 @@ const translations = {
     recipeProjectDesc: "Web platform where users can create and manage recipes for any type of meal. Developed with ReactJS, it demonstrates skills in modern frontend development and creating intuitive interfaces for content management.",
     viewProject: "View Project",
     whiteLabel: "More than 90 white label applications published - replicable models customized for different gyms",
-    
+
     // Contact Section
     workTogether: "Let's Work Together?",
     contactSubtitle: "I'm always interested in new projects and opportunities. Get in touch to discuss how I can contribute to your project.",
@@ -113,7 +118,7 @@ const translations = {
     connect: "Connect",
     sendEmail: "Send Email",
     access: "Access",
-    
+
     // Navigation
     backToTop: "Back to Top"
   },
@@ -125,7 +130,7 @@ const translations = {
     projects: "Projetos",
     skills: "Habilidades",
     contact: "Contato",
-    
+
     // Hero Section
     developer: "Desenvolvedor",
     flutter: "Flutter",
@@ -134,17 +139,17 @@ const translations = {
     solutions: "",
     viewFlutterProject: "Ver Projeto Flutter Web",
     reactProject: "Projeto ReactJS",
-    
+
     // About Section
     aboutMe: "Sobre Mim",
     aboutTitle: "Um pouco mais sobre mim",
-    aboutText1: "Sou um desenvolvedor Flutter apaixonado por criar soluções inovadoras e eficientes. Com experiência em desenvolvimento de aplicativos móveis e interfaces de usuário, busco constantemente aprimorar minhas habilidades e entregar resultados de alta qualidade.",
+    aboutText1: "Sou um Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e eficientes. Com experiência em Python para IA, ReactJS, Flutter, scripts SQL e desenvolvimento web, busco constantemente aprimorar minhas habilidades e entregar resultados de alta qualidade.",
     aboutText2: "Minha paixão por tecnologia me impulsiona a explorar novas ferramentas e abordagens, sempre em busca de soluções criativas e eficientes para os desafios que encontro.",
     mySkills: "Minhas Habilidades",
     crossPlatformDev: "Desenvolvimento Cross-Platform",
     uiUxDesign: "UI/UX Design",
     cleanCode: "Clean Code",
-    
+
     // Education Section
     educationSection: "Formação",
     academicEducation: "Formação Acadêmica",
@@ -154,7 +159,7 @@ const translations = {
     completionForecast: "Previsão de Conclusão: Formado",
     udemy: "Udemy",
     webDevelopment: "Desenvolvimento Web com ReactJs",
-    
+
     // Experience Section
     professionalExperience: "Experiência Profissional",
     flutterDeveloper: "Desenvolvedor Flutter",
@@ -168,7 +173,7 @@ const translations = {
     architectureApplication: "Aplicação de arquiteturas MVVM, BloC e Provider com Dart no desenvolvimento Flutter",
     versionControl: "Controle de versão com Git",
     appReplication: "Replicação e customização de modelos de aplicativos para diferentes academias",
-    
+
     // Skills Section
     technicalSkills: "Habilidades Técnicas",
     frontendDevelopment: "Desenvolvimento Frontend",
@@ -179,25 +184,30 @@ const translations = {
     mobileDesc: "Especializado em Flutter para criação de aplicativos cross-platform para iOS e Android.",
     webDeploy: "Web e Deploy",
     webDeployDesc: "Habilidades em deploy de aplicações web, hospedagem e otimização para performance.",
-    
+
     // Soft Skills Section
     interpersonalSkills: "Habilidades Interpessoais",
     creativity: "Criatividade na construção de soluções",
     communication: "Comunicação clara e direta",
     learning: "Facilidade para aprender e compartilhar conhecimento",
     commitment: "Compromisso com entregas colaborativas de alta qualidade",
-    
+
     // Languages Section
     languages: "Idiomas",
     portuguese: "Português",
     english: "Inglês",
     native: "Nativo",
     intermediate: "Intermediário",
-    
+
     // Projects Section
     projectsSection: "Projetos",
     projectsSubtitle: "Alguns dos projetos que desenvolvi, demonstrando minhas habilidades em Flutter e ReactJS",
     highlight: "Destaque",
+    pizzaProject: "Sistema de Pizzaria",
+    pizzaProjectSubtitle: "Plataforma Completa de Delivery de Pizza",
+    completedProject: "Projeto Concluído",
+    pizzaProjectDesc: "Sistema completo de delivery de pizza desenvolvido com ReactJS e Tailwind CSS. Inclui catálogo de produtos, carrinho de compras, sistema de pedidos e interface moderna e responsiva. Demonstra habilidades em desenvolvimento frontend moderno e criação de e-commerce.",
+    pizzaProjectHighlight: "Sistema completo de delivery com carrinho de compras, catálogo de produtos e interface moderna - desenvolvido com ReactJS e Tailwind CSS",
     flutterWebProject: "Projeto Flutter Web",
     leadManager: "Gerenciador de Leads",
     activeProject: "Projeto em desenvolvimento ativo",
@@ -208,7 +218,7 @@ const translations = {
     recipeProjectDesc: "Plataforma web onde os usuários podem criar e gerenciar receitas de qualquer tipo de refeição. Desenvolvida com ReactJS, demonstra habilidades em desenvolvimento frontend moderno e criação de interfaces intuitivas para gestão de conteúdo.",
     viewProject: "Ver Projeto",
     whiteLabel: "Mais de 90 aplicativos white label publicados - modelos replicáveis customizados para diferentes academias",
-    
+
     // Contact Section
     workTogether: "Vamos Trabalhar Juntos?",
     contactSubtitle: "Estou sempre interessado em novos projetos e oportunidades. Entre em contato para discutirmos como posso contribuir com seu projeto.",
@@ -218,7 +228,7 @@ const translations = {
     connect: "Conecte-se",
     sendEmail: "Enviar Email",
     access: "Acessar",
-    
+
     // Navigation
     backToTop: "Voltar ao Topo"
   }

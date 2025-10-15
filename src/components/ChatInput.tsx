@@ -11,13 +11,13 @@ interface ChatInputProps {
   placeholder: string;
 }
 
-const ChatInput = ({ 
-  value, 
-  onChange, 
-  onSend, 
-  onKeyPress, 
-  isLoading, 
-  placeholder 
+const ChatInput = ({
+  value,
+  onChange,
+  onSend,
+  onKeyPress,
+  isLoading,
+  placeholder
 }: ChatInputProps) => {
   return (
     <div className="flex gap-2 mt-auto">
@@ -32,7 +32,7 @@ const ChatInput = ({
       <Button
         onClick={onSend}
         disabled={isLoading || !value.trim()}
-        className="bg-green-500 hover:bg-green-600 text-white"
+        className="bg-sky-500 hover:bg-sky-600 text-white"
       >
         <Send className="w-4 h-4" />
       </Button>

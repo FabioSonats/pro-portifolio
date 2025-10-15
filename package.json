@@ -20,6 +20,11 @@
   ],
   "author": "Fábio Ferreira <ferreirafabio51@gmail.com>",
   "description": "Professional portfolio showcasing Full Stack development skills with Python for AI and ReactJS",
+  "overrides": {
+    "cmdk": {
+      "react": "$react"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -64,7 +69,7 @@
     "@tanstack/react-query": "^5.56.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "cmdk": "^1.0.0",
+    "cmdk": "^1.0.1",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.3.0",
     "input-otp": "^1.2.4",

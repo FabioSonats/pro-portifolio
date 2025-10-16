@@ -1,1 +1,2 @@
 Teste de deploy - $(date)
+Deploy forçado após tornar repositório público

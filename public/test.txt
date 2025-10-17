@@ -3,3 +3,5 @@ Deploy forçado após tornar repositório público
 Configurando permissões do GitHub Actions
 Deploy após configurar permissões - $(date)
 Corrigindo roteamento do React Router para GitHub Pages
+Adicionando efeito de palavras flutuantes no background
+Implementando algoritmo de espaçamento e ajustando header mobile

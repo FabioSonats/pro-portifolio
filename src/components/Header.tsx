@@ -1,14 +1,13 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X, Mail, Linkedin, Github, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Mail, Linkedin, Github, Phone } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t } = useLanguage();
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,55 +85,31 @@ const Header = () => {
             <LanguageSwitcher />
           </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-3">
+          {/* Mobile Navigation - Always visible contact icons */}
+          <div className="md:hidden flex items-center gap-2">
+            {/* Mobile Contact Icons - Always visible */}
+            <div className="flex items-center space-x-2">
+              {contactLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-600 hover:text-slate-900 transition-colors duration-300 p-1.5 rounded-full hover:bg-slate-100"
+                    aria-label={link.label}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                );
+              })}
+            </div>
+
             <LanguageSwitcher />
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-slate-600 hover:bg-slate-100"
-            >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-slate-200">
-            <div className="flex flex-col space-y-4 pt-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-slate-600 hover:text-slate-900 transition-colors duration-300 font-medium text-left"
-                >
-                  {item.label}
-                </button>
-              ))}
-
-              {/* Mobile Contact Icons */}
-              <div className="flex items-center space-x-4 pt-4 border-t border-slate-200">
-                {contactLinks.map((link) => {
-                  const Icon = link.icon;
-                  return (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-600 hover:text-slate-900 transition-colors duration-300 p-2 rounded-full hover:bg-slate-100"
-                      aria-label={link.label}
-                    >
-                      <Icon className="h-5 w-5" />
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          </nav>
-        )}
       </div>
     </header>
   );

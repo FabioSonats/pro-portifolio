@@ -33,7 +33,7 @@ const translations = {
     // About Section
     aboutMe: "About Me",
     aboutTitle: "A little more about me",
-    aboutText1: "I am a Full Stack Developer passionate about creating innovative and efficient solutions. With experience in Python for AI, ReactJS, Flutter, SQL scripts, and web development, I constantly seek to improve my skills and deliver high-quality results.",
+    aboutText1: "I am a Full Stack Developer passionate about creating innovative and efficient solutions. With experience in Python for AI, ReactJS, Flutter, SQL scripts, and web development, I constantly seek to improve my skills and deliver high-quality results. I love music, I'm fascinated by cinema, and I dream of traveling the world.",
     aboutText2: "My passion for technology drives me to explore new tools and approaches, always looking for creative and efficient solutions to the challenges I encounter.",
     mySkills: "My Skills",
     crossPlatformDev: "Cross-Platform Development",
@@ -91,7 +91,7 @@ const translations = {
 
     // Projects Section
     projectsSection: "Projects",
-    projectsSubtitle: "Some of the projects I've developed, demonstrating my skills in Flutter and ReactJS",
+    projectsSubtitle: "Some of the projects I've developed, demonstrating my skills in Python for AI, ReactJS and modern web development",
     highlight: "Highlight",
     pizzaProject: "Pizza System",
     pizzaProjectSubtitle: "Complete Pizza Delivery Platform",
@@ -102,9 +102,6 @@ const translations = {
     leadManager: "Lead Manager",
     activeProject: "Project in active development",
     flutterProjectDesc: "Lead management system for marketing company developed with Flutter Web. Project under construction that demonstrates skills in cross-platform development and creating business solutions using Flutter for web.",
-    pizzaMenu: "Pizza Menu",
-    pizzaMenuSubtitle: "Online Pizza Menu",
-    pizzaMenuDesc: "Responsive online pizza menu created with ReactJS. Clean, direct interface that demonstrates skills in creating commercial web applications and responsive design for food service businesses.",
     recipeCreator: "Recipe Creator",
     webRecipeApp: "Web Application for Recipe Creation",
     personalProject: "Personal project developed with ReactJS",
@@ -123,7 +120,12 @@ const translations = {
     access: "Access",
 
     // Navigation
-    backToTop: "Back to Top"
+    backToTop: "Back to Top",
+
+    // Index Page
+    showMoreInfo: "Show More Information",
+    showLessInfo: "Show Less Information",
+    viewProjects: "View Projects"
   },
   'pt-BR': {
     // Navigation
@@ -146,7 +148,7 @@ const translations = {
     // About Section
     aboutMe: "Sobre Mim",
     aboutTitle: "Um pouco mais sobre mim",
-    aboutText1: "Sou um Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e eficientes. Com experiência em Python para IA, ReactJS, Flutter, scripts SQL e desenvolvimento web, busco constantemente aprimorar minhas habilidades e entregar resultados de alta qualidade.",
+    aboutText1: "Sou um Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e eficientes. Com experiência em Python para IA, ReactJS, Flutter, scripts SQL e desenvolvimento web, busco constantemente aprimorar minhas habilidades e entregar resultados de alta qualidade. Adoro música, sou fascinado por cinema e sonho em viajar pelo mundo.",
     aboutText2: "Minha paixão por tecnologia me impulsiona a explorar novas ferramentas e abordagens, sempre em busca de soluções criativas e eficientes para os desafios que encontro.",
     mySkills: "Minhas Habilidades",
     crossPlatformDev: "Desenvolvimento Cross-Platform",
@@ -204,7 +206,7 @@ const translations = {
 
     // Projects Section
     projectsSection: "Projetos",
-    projectsSubtitle: "Alguns dos projetos que desenvolvi, demonstrando minhas habilidades em Flutter e ReactJS",
+    projectsSubtitle: "Alguns dos projetos que desenvolvi, demonstrando minhas habilidades em Python para IA, ReactJS e desenvolvimento web moderno",
     highlight: "Destaque",
     pizzaProject: "Sistema de Pizzaria",
     pizzaProjectSubtitle: "Plataforma Completa de Delivery de Pizza",
@@ -215,9 +217,6 @@ const translations = {
     leadManager: "Gerenciador de Leads",
     activeProject: "Projeto em desenvolvimento ativo",
     flutterProjectDesc: "Sistema de gerenciamento de leads para empresa de marketing desenvolvido com Flutter Web. Projeto em construção que demonstra habilidades em desenvolvimento cross-platform e criação de soluções de negócio utilizando Flutter para web.",
-    pizzaMenu: "Cardápio de Pizza",
-    pizzaMenuSubtitle: "Cardápio Online de Pizzaria",
-    pizzaMenuDesc: "Cardápio online de pizzaria responsivo criado com ReactJS. Interface limpa e direta que demonstra habilidades na criação de aplicações web comerciais e design responsivo para negócios do setor alimentício.",
     recipeCreator: "Criador de Receitas",
     webRecipeApp: "Aplicação Web para Criação de Receitas",
     personalProject: "Projeto pessoal desenvolvido com ReactJS",
@@ -236,7 +235,12 @@ const translations = {
     access: "Acessar",
 
     // Navigation
-    backToTop: "Voltar ao Topo"
+    backToTop: "Voltar ao Topo",
+
+    // Index Page
+    showMoreInfo: "Ver Mais Informações",
+    showLessInfo: "Ver Menos Informações",
+    viewProjects: "Ver Projetos"
   }
 };
 

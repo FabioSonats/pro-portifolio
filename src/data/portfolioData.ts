@@ -48,8 +48,8 @@ export const getPortfolioData = (language: string): PortfolioData => ({
       ]
   },
   projects: language === 'pt-BR'
-    ? 'Aplicações Flutter, sistemas web responsivos, integração com APIs e desenvolvimento full-stack'
-    : 'Flutter applications, responsive web systems, API integration and full-stack development',
+    ? 'Sistemas web responsivos, aplicações de IA com Python, integração com APIs e desenvolvimento full-stack'
+    : 'Responsive web systems, AI applications with Python, API integration and full-stack development',
   contact: {
     email: 'ferreirafabio51@gmail.com',
     linkedin: 'https://www.linkedin.com/in/ferreira-f%C3%A1bio-98b4304a/',

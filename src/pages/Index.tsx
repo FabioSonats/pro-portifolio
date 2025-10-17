@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
 import CookieConsent from "@/components/CookieConsent";
 import { useVisitTracker } from "@/hooks/useVisitTracker";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
@@ -19,6 +20,7 @@ const Index = () => {
   // Track page visits
   useVisitTracker();
   const [isExpanded, setIsExpanded] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 text-slate-800 relative overflow-x-hidden">
@@ -43,12 +45,12 @@ const Index = () => {
                   {isExpanded ? (
                     <>
                       <ChevronUp className="mr-2 h-5 w-5" />
-                      Ver Menos Informações
+                      {t('showLessInfo')}
                     </>
                   ) : (
                     <>
                       <ChevronDown className="mr-2 h-5 w-5" />
-                      Ver Mais Informações
+                      {t('showMoreInfo')}
                     </>
                   )}
                 </Button>
@@ -62,7 +64,7 @@ const Index = () => {
                   }}
                   className="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  Ver Projetos
+                  {t('viewProjects')}
                 </Button>
               </div>
             </div>

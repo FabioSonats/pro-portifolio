@@ -5,3 +5,4 @@ Deploy após configurar permissões - $(date)
 Corrigindo roteamento do React Router para GitHub Pages
 Adicionando efeito de palavras flutuantes no background
 Implementando algoritmo de espaçamento e ajustando header mobile
+Otimizando animações - corrigindo flash inicial e ajustando velocidade

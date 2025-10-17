@@ -54,15 +54,15 @@ const FloatingTechBackground = () => {
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
             {techKeywords.map((keyword, index) => {
                 const isEven = index % 3 === 0;
-                const randomDelay = Math.random() * 3;
-                const randomDuration = 6 + Math.random() * 4;
+                const randomDelay = Math.random() * 2;
+                const randomDuration = 4 + Math.random() * 2;
                 const randomSize = 0.8 + Math.random() * 0.6;
                 const position = positions[index];
 
                 return (
                     <div
                         key={keyword}
-                        className={`absolute font-medium text-sky-400/70 ${isEven ? 'animate-float-bg' :
+                        className={`absolute font-medium text-sky-400/70 opacity-0 ${isEven ? 'animate-float-bg' :
                             index % 3 === 1 ? 'animate-float-bg-rotate' : 'animate-float-bg'
                             }`}
                         style={{

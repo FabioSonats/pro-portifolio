@@ -8,3 +8,4 @@ Implementando algoritmo de espaçamento e ajustando header mobile
 Otimizando animações - corrigindo flash inicial e ajustando velocidade
 Forçando novo deploy após ajustes de animação
 Revisão completa das traduções e remoção de projeto duplicado
+Atualizando link do projeto de receitas para GitHub Pages

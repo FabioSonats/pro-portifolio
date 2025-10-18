@@ -31,7 +31,7 @@ const ProjectsSection = () => {
       status: t('personalProject'),
       description: t('recipeProjectDesc'),
       technologies: ["ReactJS", "JavaScript", "CSS3", "HTML5", "GitHub Pages"],
-      link: "https://chef-samurai-site.web.app/#/"
+      link: "https://fabiosonats.github.io/chef_samurai/#/"
     }
   ];
 

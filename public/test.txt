@@ -10,3 +10,4 @@ Forçando novo deploy após ajustes de animação
 Revisão completa das traduções e remoção de projeto duplicado
 Atualizando link do projeto de receitas para GitHub Pages
 Movendo botão de trocar linguagem para o final da seção expandida
+Atualizando favicon e meta tags do portfólio

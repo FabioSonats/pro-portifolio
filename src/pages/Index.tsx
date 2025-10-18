@@ -15,6 +15,7 @@ import { useVisitTracker } from "@/hooks/useVisitTracker";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const Index = () => {
   // Track page visits
@@ -76,6 +77,11 @@ const Index = () => {
                 <ProjectsSection />
                 <SoftSkillsSection />
                 <AboutSection />
+                
+                {/* Language Switcher at the end */}
+                <div className="flex justify-center pt-8">
+                  <LanguageSwitcher />
+                </div>
               </div>
             )}
           </div>

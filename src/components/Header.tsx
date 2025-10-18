@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Mail, Linkedin, Github, Phone } from "lucide-react";
-import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
@@ -22,7 +21,6 @@ const Header = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
     }
   };
 
@@ -82,7 +80,6 @@ const Header = () => {
               })}
             </div>
 
-            <LanguageSwitcher />
           </nav>
 
           {/* Mobile Navigation - Always visible contact icons */}
@@ -106,7 +103,6 @@ const Header = () => {
               })}
             </div>
 
-            <LanguageSwitcher />
           </div>
         </div>
 

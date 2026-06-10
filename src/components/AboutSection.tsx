@@ -9,19 +9,19 @@ const AboutSection = () => {
     <section id="about" className="py-20 px-4">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-sky-500 mb-4">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground mb-4">
             {t('aboutMe')}
           </h2>
-          <div className="w-16 h-1 bg-sky-500 mx-auto"></div>
+          <div className="w-16 h-1 bg-foreground mx-auto"></div>
         </div>
 
-        <Card className="bg-white border-sky-200 border-2">
+        <Card className="bg-card border border-border">
           <CardContent className="p-8">
             <div className="max-w-4xl mx-auto text-center">
-              <h3 className="text-2xl font-bold text-slate-800 mb-6">
+              <h3 className="text-2xl font-semibold tracking-tight text-foreground mb-6">
                 {t('aboutTitle')}
               </h3>
-              <div className="space-y-4 text-slate-600 leading-relaxed">
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   {t('aboutText1')}
                 </p>

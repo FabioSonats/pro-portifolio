@@ -24,7 +24,7 @@ const Index = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 text-slate-800 relative overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden">
       <Header />
 
       <main className="relative z-10">
@@ -34,14 +34,14 @@ const Index = () => {
         <ExperienceSection />
 
         {/* Expandable sections */}
-        <div className="bg-white/80 backdrop-blur-sm border-t border-slate-200">
+        <div className="bg-background border-t border-border">
           <div className="container max-w-6xl mx-auto py-8">
             <div className="text-center mb-8">
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button
                   onClick={() => setIsExpanded(!isExpanded)}
                   variant="outline"
-                  className="bg-white hover:bg-sky-50 border-sky-300 text-sky-700 hover:text-sky-900 px-8 py-3 shadow-sm hover:shadow-md transition-all duration-300"
+                  className="border border-border bg-transparent text-foreground hover:bg-muted px-8 py-3 transition-all duration-300"
                 >
                   {isExpanded ? (
                     <>
@@ -63,7 +63,7 @@ const Index = () => {
                       document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
                     }, 300);
                   }}
-                  className="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 transition-all duration-300"
                 >
                   {t('viewProjects')}
                 </Button>

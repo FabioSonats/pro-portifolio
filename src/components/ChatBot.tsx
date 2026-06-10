@@ -44,7 +44,7 @@ const ChatBot = () => {
     return (
       <Button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-4 right-4 w-16 h-16 bg-sky-500 hover:bg-sky-600 text-white shadow-lg z-50"
+        className="fixed bottom-4 right-4 w-16 h-16 bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm z-50"
       >
         <MessageCircle className="w-6 h-6" />
       </Button>
@@ -53,9 +53,9 @@ const ChatBot = () => {
 
   return (
     <div className="fixed bottom-4 right-4 w-80 sm:w-96 h-[500px] max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] z-50">
-      <Card className="h-full bg-slate-900/95 border-sky-500/30 backdrop-blur-sm">
+      <Card className="h-full bg-card border border-border backdrop-blur-sm">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-          <CardTitle className="text-sky-400 flex items-center gap-2">
+          <CardTitle className="text-foreground flex items-center gap-2">
             <Bot className="w-5 h-5" />
             {language === 'pt-BR' ? 'Assistente do Portfólio' : 'Portfolio Assistant'}
           </CardTitle>
@@ -63,7 +63,7 @@ const ChatBot = () => {
             variant="ghost"
             size="sm"
             onClick={() => setIsOpen(false)}
-            className="text-gray-400 hover:text-white"
+            className="text-muted-foreground hover:text-foreground"
           >
             <X className="w-4 h-4" />
           </Button>

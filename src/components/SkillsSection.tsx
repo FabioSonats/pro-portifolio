@@ -44,18 +44,18 @@ const SkillsSection = () => {
     <section id="skills" className="py-20 px-4">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-sky-500 mb-4">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground mb-4">
             {t('technicalSkills')}
           </h2>
-          <div className="w-16 h-1 bg-sky-500 mx-auto"></div>
+          <div className="w-16 h-1 bg-foreground mx-auto"></div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
-            <Card key={index} className="bg-white border-sky-200 hover:border-sky-300 transition-colors hover:shadow-lg">
+            <Card key={index} className="bg-card border border-border hover:border-foreground/30 transition-colors">
               <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-bold text-slate-800 mb-3">{skill.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{skill.description}</p>
+                <h3 className="text-xl font-semibold tracking-tight text-foreground mb-3">{skill.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{skill.description}</p>
               </CardContent>
             </Card>
           ))}

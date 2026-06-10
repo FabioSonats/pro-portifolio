@@ -15,21 +15,21 @@ const LanguageSwitcher = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="gap-2 border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-white">
+        <Button variant="outline" size="sm" className="gap-2 border border-border bg-transparent text-foreground hover:bg-muted">
           <Globe className="h-4 w-4" />
           {language === 'en' ? 'EN' : 'PT'}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-white border-sky-200">
+      <DropdownMenuContent align="end" className="bg-popover border-border">
         <DropdownMenuItem
           onClick={() => setLanguage('en')}
-          className="text-slate-700 hover:bg-sky-50 hover:text-sky-600 cursor-pointer"
+          className="text-foreground hover:bg-muted hover:text-foreground cursor-pointer"
         >
           🇺🇸 English
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setLanguage('pt-BR')}
-          className="text-slate-700 hover:bg-sky-50 hover:text-sky-600 cursor-pointer"
+          className="text-foreground hover:bg-muted hover:text-foreground cursor-pointer"
         >
           🇧🇷 Português
         </DropdownMenuItem>

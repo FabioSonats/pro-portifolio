@@ -125,7 +125,20 @@ const translations = {
     // Index Page
     showMoreInfo: "Show More Information",
     showLessInfo: "Show Less Information",
-    viewProjects: "View Projects"
+    viewProjects: "View Projects",
+
+    // Blog
+    blog: "Blog",
+    blogTitle: "Articles",
+    blogSubtitle: "Notes on full stack development, AI applied to software, code quality and security.",
+    readArticle: "Read article",
+    readingTime: "min read",
+    backToBlog: "Back to articles",
+    backToHome: "Back to home",
+    noPosts: "No articles published yet. Coming soon.",
+    publishedOn: "Published on",
+    viewOnLinkedin: "View original post on LinkedIn",
+    blogLoadError: "Could not load articles. Try again later."
   },
   'pt-BR': {
     // Navigation
@@ -240,7 +253,20 @@ const translations = {
     // Index Page
     showMoreInfo: "Ver Mais Informações",
     showLessInfo: "Ver Menos Informações",
-    viewProjects: "Ver Projetos"
+    viewProjects: "Ver Projetos",
+
+    // Blog
+    blog: "Blog",
+    blogTitle: "Artigos",
+    blogSubtitle: "Textos sobre desenvolvimento full stack, IA aplicada a software, qualidade de código e segurança.",
+    readArticle: "Ler artigo",
+    readingTime: "min de leitura",
+    backToBlog: "Voltar aos artigos",
+    backToHome: "Voltar ao início",
+    noPosts: "Nenhum artigo publicado ainda. Em breve.",
+    publishedOn: "Publicado em",
+    viewOnLinkedin: "Ver post original no LinkedIn",
+    blogLoadError: "Não foi possível carregar os artigos. Tente novamente mais tarde."
   }
 };
 

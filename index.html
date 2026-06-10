@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR" class="dark" style="color-scheme: dark; background-color: #0a0a0a;">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fábio Ferreira - Full Stack Developer</title>
-    <meta name="description" content="Portfólio profissional de Fábio Ferreira - Desenvolvedor Full Stack especializado em Python para IA, ReactJS e desenvolvimento web moderno" />
+    <title>Fábio Ferreira — Desenvolvedor Full Stack</title>
+    <meta name="description" content="Portfólio de Fábio Ferreira, desenvolvedor full stack do ecossistema TypeScript (React, Next.js, Node, Supabase) construindo produtos com IA." />
     <meta name="author" content="Fábio Ferreira" />
 
-    <meta property="og:title" content="Fábio Ferreira - Full Stack Developer" />
-    <meta property="og:description" content="Portfólio profissional de Fábio Ferreira - Desenvolvedor Full Stack especializado em Python para IA, ReactJS e desenvolvimento web moderno" />
+    <meta property="og:title" content="Fábio Ferreira — Desenvolvedor Full Stack" />
+    <meta property="og:description" content="Portfólio de Fábio Ferreira, desenvolvedor full stack do ecossistema TypeScript (React, Next.js, Node, Supabase) construindo produtos com IA." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
@@ -20,6 +20,17 @@
 
   <body>
     <div id="root"></div>
+    <!-- Restaura a rota vinda do fallback de SPA (public/404.html) -->
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      }(window.location));
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

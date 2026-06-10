@@ -62,7 +62,7 @@ const FloatingTechBackground = () => {
                 return (
                     <div
                         key={keyword}
-                        className={`absolute font-medium text-sky-400/70 opacity-0 ${isEven ? 'animate-float-bg' :
+                        className={`absolute font-medium text-foreground/20 opacity-0 ${isEven ? 'animate-float-bg' :
                             index % 3 === 1 ? 'animate-float-bg-rotate' : 'animate-float-bg'
                             }`}
                         style={{

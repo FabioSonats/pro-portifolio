@@ -19,7 +19,7 @@ const ChatMessage = ({ message }: ChatMessageProps) => {
             href={part}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-400 hover:text-blue-300 underline cursor-pointer"
+            className="text-foreground hover:text-muted-foreground underline cursor-pointer"
           >
             {part}
           </a>
@@ -33,12 +33,12 @@ const ChatMessage = ({ message }: ChatMessageProps) => {
     <div className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}>
       <div
         className={`max-w-[80%] px-3 py-2 text-sm ${message.isUser
-            ? 'bg-sky-500 text-white'
-            : 'bg-slate-700 text-gray-100'
+            ? 'bg-primary text-primary-foreground'
+            : 'bg-muted text-foreground'
           }`}
       >
         <div className="flex items-start gap-2">
-          {!message.isUser && <Bot className="w-4 h-4 mt-0.5 text-sky-400" />}
+          {!message.isUser && <Bot className="w-4 h-4 mt-0.5 text-muted-foreground" />}
           <div className="flex-1">
             <p className="whitespace-pre-wrap">
               {formatMessageWithLinks(message.text)}

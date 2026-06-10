@@ -26,13 +26,13 @@ const ChatInput = ({
         onChange={(e) => onChange(e.target.value)}
         onKeyPress={onKeyPress}
         placeholder={placeholder}
-        className="flex-1 bg-slate-800 border-slate-600 text-white placeholder-gray-400"
+        className="flex-1 bg-muted border-border text-foreground placeholder:text-muted-foreground"
         disabled={isLoading}
       />
       <Button
         onClick={onSend}
         disabled={isLoading || !value.trim()}
-        className="bg-sky-500 hover:bg-sky-600 text-white"
+        className="bg-primary text-primary-foreground hover:bg-primary/90"
       >
         <Send className="w-4 h-4" />
       </Button>

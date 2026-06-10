@@ -29,7 +29,7 @@ const SectionNavigation = ({ nextSection, prevSection, showBackToTop }: SectionN
         <Button
           variant="outline"
           size="icon"
-          className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black"
+          className="border border-border bg-transparent text-foreground hover:bg-muted"
           onClick={() => scrollToSection(prevSection)}
           aria-label="Seção anterior"
         >
@@ -39,7 +39,7 @@ const SectionNavigation = ({ nextSection, prevSection, showBackToTop }: SectionN
       
       {showBackToTop && (
         <Button
-          className="bg-green-500 hover:bg-green-600 text-black font-bold px-6"
+          className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-6"
           onClick={scrollToTop}
         >
           <ChevronUp className="mr-2 h-4 w-4" />
@@ -51,7 +51,7 @@ const SectionNavigation = ({ nextSection, prevSection, showBackToTop }: SectionN
         <Button
           variant="outline"
           size="icon"
-          className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black"
+          className="border border-border bg-transparent text-foreground hover:bg-muted"
           onClick={() => scrollToSection(nextSection)}
           aria-label="Próxima seção"
         >

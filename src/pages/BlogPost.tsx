@@ -1,6 +1,6 @@
 import { Children, isValidElement, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, Clock, Calendar, Linkedin } from 'lucide-react';
+import { ArrowLeft, ArrowUp, Clock, Calendar, Linkedin } from 'lucide-react';
 import { format } from 'date-fns';
 import { ptBR, enUS } from 'date-fns/locale';
 import ReactMarkdown from 'react-markdown';
@@ -124,7 +124,7 @@ const BlogPost = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
 
-      <main className="container max-w-5xl mx-auto px-6 pt-28 pb-20">
+      <main className="container max-w-7xl mx-auto px-6 pt-28 pb-20">
         <Link
           to="/blog"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12"
@@ -152,10 +152,10 @@ const BlogPost = () => {
         )}
 
         {post && (
-          <div className="lg:flex lg:gap-12 lg:justify-center">
-            {toc.length > 0 && (
-              <aside className="hidden lg:block lg:w-52 lg:shrink-0">
-                <nav className="sticky top-28">
+          <div className="lg:grid lg:gap-8 lg:grid-cols-[12rem_minmax(0,42rem)] xl:grid-cols-[1fr_42rem_1fr] xl:gap-10">
+            <aside className="hidden lg:block xl:justify-self-start">
+              {toc.length > 0 && (
+                <nav className="sticky top-28 w-48">
                   <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">
                     {t('onThisPage')}
                   </p>
@@ -164,6 +164,7 @@ const BlogPost = () => {
                       <li key={item.id}>
                         <a
                           href={`#${item.id}`}
+                          onClick={() => setActiveId(item.id)}
                           className={`block border-l py-1 pl-3 leading-snug transition-colors ${
                             activeId === item.id
                               ? 'border-foreground text-foreground'
@@ -176,10 +177,10 @@ const BlogPost = () => {
                     ))}
                   </ul>
                 </nav>
-              </aside>
-            )}
+              )}
+            </aside>
 
-            <article className="w-full min-w-0 lg:max-w-2xl">
+            <article className="w-full min-w-0">
               <header className="mb-10 pb-8 border-b border-border">
                 {post.category && (
                   <Badge
@@ -264,6 +265,17 @@ const BlogPost = () => {
                 initialLikes={post.likes ?? 0}
                 initialDislikes={post.dislikes ?? 0}
               />
+
+              <div className="mt-12 flex justify-center">
+                <button
+                  type="button"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  className="inline-flex items-center gap-1.5 border border-border px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
+                >
+                  <ArrowUp className="h-4 w-4" />
+                  {t('backToTop')}
+                </button>
+              </div>
             </article>
           </div>
         )}

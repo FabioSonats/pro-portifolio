@@ -8,6 +8,7 @@ import remarkGfm from 'remark-gfm';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BlogReactions from '@/components/BlogReactions';
+import BlogReferences from '@/components/BlogReferences';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useBlogPost } from '@/hooks/useBlogPosts';
@@ -53,6 +54,23 @@ const extractToc = (markdown: string) => {
   return items;
 };
 
+// Separa a secao "## Referencias" do corpo do artigo, para renderiza-la
+// num bloco proprio recolhivel (mostrar mais / mostrar menos).
+const splitReferences = (content: string) => {
+  const lines = content.split('\n');
+  const idx = lines.findIndex((l) => /^##\s+Referências\s*$/.test(l.trim()));
+  if (idx === -1) return { bodyContent: content, references: [] as string[] };
+
+  const bodyContent = lines.slice(0, idx).join('\n').trimEnd();
+  const references = lines
+    .slice(idx + 1)
+    .map((l) => l.trim())
+    .filter((l) => l.startsWith('- '))
+    .map((l) => l.replace(/^-\s+/, ''));
+
+  return { bodyContent, references };
+};
+
 // Headings com id automatico + offset para o header fixo nao cobrir o titulo.
 const mdComponents = {
   h2: ({ children }: { children?: ReactNode }) => (
@@ -75,6 +93,10 @@ const BlogPost = () => {
   const dateLocale = language === 'pt-BR' ? ptBR : enUS;
 
   const toc = useMemo(() => (post ? extractToc(post.content) : []), [post]);
+  const { bodyContent, references } = useMemo(
+    () => splitReferences(post?.content ?? ''),
+    [post]
+  );
   const [activeId, setActiveId] = useState<string>('');
 
   // Scroll spy: destaca no indice a secao visivel.
@@ -205,9 +227,11 @@ const BlogPost = () => {
                   prose-strong:text-foreground prose-img:rounded-none prose-img:border prose-img:border-border"
               >
                 <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents}>
-                  {post.content}
+                  {bodyContent}
                 </ReactMarkdown>
               </div>
+
+              <BlogReferences items={references} />
 
               {post.tags && post.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2 mt-12 pt-8 border-t border-border">

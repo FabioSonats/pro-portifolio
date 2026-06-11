@@ -8,35 +8,39 @@ const SkillsSection = () => {
   const skills = [
     {
       title: language === 'pt-BR' ? 'Python para IA' : 'Python for AI',
-      description: language === 'pt-BR' ? 'Desenvolvimento de agentes de IA, automação e machine learning' : 'AI agents development, automation and machine learning'
+      description: language === 'pt-BR' ? 'Agentes de IA, automação e integração de modelos' : 'AI agents, automation and model integration'
     },
     {
-      title: 'ReactJS & Tailwind CSS',
-      description: language === 'pt-BR' ? 'Desenvolvimento de aplicações web modernas e responsivas' : 'Modern and responsive web applications development'
+      title: 'React & Next.js',
+      description: language === 'pt-BR' ? 'Aplicações web modernas, App Router e SSR' : 'Modern web apps, App Router and SSR'
     },
     {
-      title: 'Git Avançado',
-      description: language === 'pt-BR' ? 'Controle de versão avançado, branching strategies e CI/CD' : 'Advanced version control, branching strategies and CI/CD'
+      title: 'TypeScript & Tailwind',
+      description: language === 'pt-BR' ? 'Tipagem segura e interfaces responsivas com shadcn/ui' : 'Type-safe code and responsive UI with shadcn/ui'
     },
     {
-      title: 'SQL & Bancos de Dados',
-      description: language === 'pt-BR' ? 'Consultas complexas, otimização e design de banco de dados' : 'Complex queries, optimization and database design'
+      title: 'Supabase & Postgres',
+      description: language === 'pt-BR' ? 'Auth, RLS, Edge Functions e Realtime' : 'Auth, RLS, Edge Functions and Realtime'
     },
     {
-      title: 'Testes Automatizados',
-      description: language === 'pt-BR' ? 'Jest, Cypress, testes unitários e de integração' : 'Jest, Cypress, unit and integration testing'
+      title: language === 'pt-BR' ? 'Integração de IA' : 'AI Integration',
+      description: language === 'pt-BR' ? 'Anthropic e Gemini SDK, chat com streaming e RAG' : 'Anthropic and Gemini SDK, streaming chat and RAG'
+    },
+    {
+      title: language === 'pt-BR' ? 'APIs & Automação' : 'APIs & Automation',
+      description: language === 'pt-BR' ? 'REST, webhooks e fluxos no n8n e Zapier' : 'REST, webhooks and n8n / Zapier flows'
+    },
+    {
+      title: language === 'pt-BR' ? 'Testes Automatizados' : 'Automated Testing',
+      description: language === 'pt-BR' ? 'Vitest, Jest e Playwright (e2e)' : 'Vitest, Jest and Playwright (e2e)'
     },
     {
       title: 'Docker & Deploy',
-      description: language === 'pt-BR' ? 'Containerização e deploy em produção' : 'Containerization and production deployment'
-    },
-    {
-      title: 'Scrum & Kanban',
-      description: language === 'pt-BR' ? 'Metodologias ágeis e gestão de projetos' : 'Agile methodologies and project management'
+      description: language === 'pt-BR' ? 'Containerização, CI/CD e deploy em produção' : 'Containerization, CI/CD and production deployment'
     },
     {
       title: 'Flutter & Mobile',
-      description: language === 'pt-BR' ? 'Desenvolvimento mobile cross-platform' : 'Cross-platform mobile development'
+      description: language === 'pt-BR' ? 'Apps cross-platform iOS e Android (experiência Tecnofit)' : 'Cross-platform iOS and Android apps (Tecnofit experience)'
     }
   ];
 

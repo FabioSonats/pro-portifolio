@@ -43,51 +43,51 @@ describe('SkillsSection Component', () => {
         )
 
         expect(screen.getByText('Python for AI')).toBeInTheDocument()
-        expect(screen.getByText(/AI agents development, automation and machine learning/)).toBeInTheDocument()
+        expect(screen.getByText(/AI agents, automation and model integration/)).toBeInTheDocument()
     })
 
-    it('renders ReactJS & Tailwind CSS skill', () => {
+    it('renders React & Next.js skill', () => {
         render(
             <TestWrapper>
                 <SkillsSection />
             </TestWrapper>
         )
 
-        expect(screen.getByText('ReactJS & Tailwind CSS')).toBeInTheDocument()
-        expect(screen.getByText(/Modern and responsive web applications development/)).toBeInTheDocument()
+        expect(screen.getByText('React & Next.js')).toBeInTheDocument()
+        expect(screen.getByText(/Modern web apps, App Router and SSR/)).toBeInTheDocument()
     })
 
-    it('renders Git Avançado skill', () => {
+    it('renders Supabase & Postgres skill', () => {
         render(
             <TestWrapper>
                 <SkillsSection />
             </TestWrapper>
         )
 
-        expect(screen.getByText('Git Avançado')).toBeInTheDocument()
-        expect(screen.getByText(/Advanced version control, branching strategies and CI\/CD/)).toBeInTheDocument()
+        expect(screen.getByText('Supabase & Postgres')).toBeInTheDocument()
+        expect(screen.getByText(/Auth, RLS, Edge Functions and Realtime/)).toBeInTheDocument()
     })
 
-    it('renders SQL & Bancos de Dados skill', () => {
+    it('renders AI Integration skill', () => {
         render(
             <TestWrapper>
                 <SkillsSection />
             </TestWrapper>
         )
 
-        expect(screen.getByText('SQL & Bancos de Dados')).toBeInTheDocument()
-        expect(screen.getByText(/Complex queries, optimization and database design/)).toBeInTheDocument()
+        expect(screen.getByText('AI Integration')).toBeInTheDocument()
+        expect(screen.getByText(/Anthropic and Gemini SDK, streaming chat and RAG/)).toBeInTheDocument()
     })
 
-    it('renders Testes Automatizados skill', () => {
+    it('renders Automated Testing skill', () => {
         render(
             <TestWrapper>
                 <SkillsSection />
             </TestWrapper>
         )
 
-        expect(screen.getByText('Testes Automatizados')).toBeInTheDocument()
-        expect(screen.getByText(/Jest, Cypress, unit and integration testing/)).toBeInTheDocument()
+        expect(screen.getByText('Automated Testing')).toBeInTheDocument()
+        expect(screen.getByText(/Vitest, Jest and Playwright/)).toBeInTheDocument()
     })
 
     it('renders Docker & Deploy skill', () => {
@@ -98,18 +98,7 @@ describe('SkillsSection Component', () => {
         )
 
         expect(screen.getByText('Docker & Deploy')).toBeInTheDocument()
-        expect(screen.getByText(/Containerization and production deployment/)).toBeInTheDocument()
-    })
-
-    it('renders Scrum & Kanban skill', () => {
-        render(
-            <TestWrapper>
-                <SkillsSection />
-            </TestWrapper>
-        )
-
-        expect(screen.getByText('Scrum & Kanban')).toBeInTheDocument()
-        expect(screen.getByText(/Agile methodologies and project management/)).toBeInTheDocument()
+        expect(screen.getByText(/Containerization, CI\/CD and production deployment/)).toBeInTheDocument()
     })
 
     it('renders Flutter & Mobile skill', () => {
@@ -120,10 +109,10 @@ describe('SkillsSection Component', () => {
         )
 
         expect(screen.getByText('Flutter & Mobile')).toBeInTheDocument()
-        expect(screen.getByText(/Cross-platform mobile development/)).toBeInTheDocument()
+        expect(screen.getByText(/Cross-platform iOS and Android apps/)).toBeInTheDocument()
     })
 
-    it('renders all 8 skills', () => {
+    it('renders all 9 skills', () => {
         render(
             <TestWrapper>
                 <SkillsSection />
@@ -132,7 +121,7 @@ describe('SkillsSection Component', () => {
 
         // Count skill titles instead of articles
         const skillTitles = screen.getAllByRole('heading', { level: 3 })
-        expect(skillTitles).toHaveLength(8)
+        expect(skillTitles).toHaveLength(9)
     })
 
     it('has correct section ID', () => {

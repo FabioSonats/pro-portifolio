@@ -107,6 +107,14 @@ const translations = {
     personalProject: "Personal project developed with ReactJS",
     recipeProjectDesc: "Web platform where users can create and manage recipes for any type of meal. Developed with ReactJS, it demonstrates skills in modern frontend development and creating intuitive interfaces for content management.",
     viewProject: "View Project",
+    viewDetails: "View details",
+    backToProjects: "Back to projects",
+    accessProject: "Access project",
+    projectOverview: "Overview",
+    projectProcess: "Development process",
+    projectStack: "Stack used",
+    projectChallenges: "Challenges",
+    projectNotFound: "Project not found.",
     whiteLabel: "More than 90 white label applications published - replicable models customized for different gyms",
 
     // Contact Section
@@ -141,7 +149,10 @@ const translations = {
     blogLoadError: "Could not load articles. Try again later.",
     reactionsQuestion: "Was this article helpful?",
     reactionsThanks: "Thanks for the feedback!",
-    onThisPage: "On this page"
+    onThisPage: "On this page",
+    references: "References",
+    showMoreRefs: "Show more",
+    showLessRefs: "Show less"
   },
   'pt-BR': {
     // Navigation
@@ -238,6 +249,14 @@ const translations = {
     personalProject: "Projeto pessoal desenvolvido com ReactJS",
     recipeProjectDesc: "Plataforma web onde os usuários podem criar e gerenciar receitas de qualquer tipo de refeição. Desenvolvida com ReactJS, demonstra habilidades em desenvolvimento frontend moderno e criação de interfaces intuitivas para gestão de conteúdo.",
     viewProject: "Ver Projeto",
+    viewDetails: "Ver detalhes",
+    backToProjects: "Voltar aos projetos",
+    accessProject: "Acessar projeto",
+    projectOverview: "Visão geral",
+    projectProcess: "Processo de desenvolvimento",
+    projectStack: "Stack utilizada",
+    projectChallenges: "Desafios",
+    projectNotFound: "Projeto não encontrado.",
     whiteLabel: "Mais de 90 aplicativos white label publicados - modelos replicáveis customizados para diferentes academias",
 
     // Contact Section
@@ -272,7 +291,10 @@ const translations = {
     blogLoadError: "Não foi possível carregar os artigos. Tente novamente mais tarde.",
     reactionsQuestion: "Esse artigo foi útil?",
     reactionsThanks: "Valeu pelo feedback!",
-    onThisPage: "Nesta página"
+    onThisPage: "Nesta página",
+    references: "Referências",
+    showMoreRefs: "Mostrar mais",
+    showLessRefs: "Mostrar menos"
   }
 };
 

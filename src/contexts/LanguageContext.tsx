@@ -138,7 +138,10 @@ const translations = {
     noPosts: "No articles published yet. Coming soon.",
     publishedOn: "Published on",
     viewOnLinkedin: "View original post on LinkedIn",
-    blogLoadError: "Could not load articles. Try again later."
+    blogLoadError: "Could not load articles. Try again later.",
+    reactionsQuestion: "Was this article helpful?",
+    reactionsThanks: "Thanks for the feedback!",
+    onThisPage: "On this page"
   },
   'pt-BR': {
     // Navigation
@@ -266,7 +269,10 @@ const translations = {
     noPosts: "Nenhum artigo publicado ainda. Em breve.",
     publishedOn: "Publicado em",
     viewOnLinkedin: "Ver post original no LinkedIn",
-    blogLoadError: "Não foi possível carregar os artigos. Tente novamente mais tarde."
+    blogLoadError: "Não foi possível carregar os artigos. Tente novamente mais tarde.",
+    reactionsQuestion: "Esse artigo foi útil?",
+    reactionsThanks: "Valeu pelo feedback!",
+    onThisPage: "Nesta página"
   }
 };
 

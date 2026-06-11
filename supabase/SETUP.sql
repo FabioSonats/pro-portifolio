@@ -58,6 +58,8 @@ CREATE TABLE IF NOT EXISTS blog_posts (
   lang TEXT NOT NULL DEFAULT 'pt-BR',
   reading_minutes INTEGER DEFAULT 5,
   linkedin_url TEXT,
+  likes INTEGER NOT NULL DEFAULT 0,
+  dislikes INTEGER NOT NULL DEFAULT 0,
   status TEXT NOT NULL DEFAULT 'draft',
   published_at TIMESTAMP WITH TIME ZONE,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc'::text, NOW()) NOT NULL,
@@ -96,3 +98,28 @@ CREATE POLICY "Authenticated can manage posts" ON blog_posts
   FOR ALL TO authenticated
   USING (true)
   WITH CHECK (true);
+
+-- ----------------------------------------------------------------
+-- 3) Reacoes (gostei / nao gostei) do visitante anonimo
+-- ----------------------------------------------------------------
+CREATE OR REPLACE FUNCTION react_to_post(p_slug text, p_reaction text)
+RETURNS TABLE(likes integer, dislikes integer)
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+BEGIN
+  IF p_reaction = 'like' THEN
+    UPDATE blog_posts SET likes = blog_posts.likes + 1
+      WHERE slug = p_slug AND status = 'published';
+  ELSIF p_reaction = 'dislike' THEN
+    UPDATE blog_posts SET dislikes = blog_posts.dislikes + 1
+      WHERE slug = p_slug AND status = 'published';
+  END IF;
+
+  RETURN QUERY
+    SELECT b.likes, b.dislikes FROM blog_posts b WHERE b.slug = p_slug;
+END;
+$$;
+
+GRANT EXECUTE ON FUNCTION react_to_post(text, text) TO anon, authenticated;

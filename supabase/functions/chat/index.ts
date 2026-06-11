@@ -149,7 +149,7 @@ EXEMPLOS DE PERGUNTAS:
 - "Qual foi sua experiência na Tecnofit?"
 - "Como posso entrar em contato?"
 
-IMPORTANTE: Este é o portfólio oficial do Fábio Ferreira (https://pro-portifolio.lovable.app/).
+IMPORTANTE: Este é o portfólio oficial do Fábio Ferreira (https://fabiosonats.github.io/pro-portifolio/).
 
 Dados do portfólio: ${JSON.stringify(portfolioData)}`
 

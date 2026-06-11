@@ -20,9 +20,11 @@ export type Database = {
           content: string
           cover_image: string | null
           created_at: string
+          dislikes: number
           excerpt: string
           id: string
           lang: string
+          likes: number
           linkedin_url: string | null
           published_at: string | null
           reading_minutes: number | null
@@ -37,9 +39,11 @@ export type Database = {
           content: string
           cover_image?: string | null
           created_at?: string
+          dislikes?: number
           excerpt: string
           id?: string
           lang?: string
+          likes?: number
           linkedin_url?: string | null
           published_at?: string | null
           reading_minutes?: number | null
@@ -54,9 +58,11 @@ export type Database = {
           content?: string
           cover_image?: string | null
           created_at?: string
+          dislikes?: number
           excerpt?: string
           id?: string
           lang?: string
+          likes?: number
           linkedin_url?: string | null
           published_at?: string | null
           reading_minutes?: number | null
@@ -124,7 +130,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      react_to_post: {
+        Args: { p_slug: string; p_reaction: string }
+        Returns: { likes: number; dislikes: number }[]
+      }
     }
     Enums: {
       [_ in never]: never

@@ -21,6 +21,14 @@ O paradigma do Shift-Left propõe um deslocamento estratégico: antecipar a desc
 
 Estudos seminais demonstram que o custo de correção de um defeito cresce exponencialmente à medida que o software avança no ciclo de vida. Corrigir uma falha de arquitetura no quadro branco, durante o desenho, consome minutos de debate entre os engenheiros. Corrigir essa mesma falha estrutural depois da arquitetura implementada, com o banco populado e o sistema em produção, exige ciclos de refatoração massivos.
 
+```mermaid
+xychart-beta
+    title "Custo de corrigir uma falha por fase do projeto"
+    x-axis ["Concepção", "Desenho", "Implementação", "Testes", "Produção"]
+    y-axis "Custo relativo" 0 --> 100
+    line [1, 3, 12, 40, 100]
+```
+
 ### O peso regulatório
 
 Além do custo técnico de refatoração e do tempo de inatividade, a descoberta tardia de vulnerabilidades em produção expõe as organizações a riscos legais severos. A conformidade com a Lei Geral de Proteção de Dados (LGPD) no Brasil e o GDPR na Europa impõe multas rigorosas e danos de reputação em casos de vazamento decorrente de falhas negligenciadas.
@@ -53,6 +61,16 @@ Para estruturar essa análise de forma padronizada, a indústria adotou a metodo
 **Elevation of Privilege (elevação de privilégio).** Um usuário restrito explora uma falha para obter acesso além de sua autorização.
 *Mitigação:* controle de acesso por função (RBAC) ou atributo (ABAC) aplicado de forma intransigente, com validação de privilégios exclusivamente no backend. O frontend pode ocultar botões pela experiência, mas nunca é fronteira de segurança.
 
+```mermaid
+flowchart LR
+S["Spoofing"] --> SM["MFA, OAuth 2.0 / OIDC, sessões com expiração"]
+T["Tampering"] --> TM["TLS 1.3, AES-256, hashes e assinaturas"]
+R["Repudiation"] --> RM["Logs imutáveis e trilha de auditoria"]
+I["Information Disclosure"] --> IM["Mascaramento e exceções genéricas"]
+D["Denial of Service"] --> DM["Rate limiting, auto-scaling, WAF e CDN"]
+E["Elevation of Privilege"] --> EM["RBAC / ABAC validado no backend"]
+```
+
 Ao final do exercício de STRIDE, o que era um esboço no quadro branco vira um backlog priorizado de requisitos de segurança.
 
 ## Menor privilégio e Zero Trust
@@ -76,6 +94,13 @@ A evolução do menor privilégio é o Zero Trust (NIST SP 800-207), que elimina
 
 A união do menor privilégio com o Zero Trust tem um objetivo claro: conter o dano, minimizar o raio de explosão. Se um invasor comprometer o módulo de pagamentos do exemplo, a arquitetura garante que o impacto fique contido àquela fronteira. Ele não consegue mover-se lateralmente para o módulo de RH nem escalar privilégios para derrubar o banco principal.
 
+```mermaid
+flowchart TB
+A["Invasor"] -->|compromete| P["Módulo de Pagamentos"]
+P -.->|bloqueado| RH["Módulo de RH"]
+P -.->|bloqueado| DB[("Banco principal")]
+```
+
 ## Implementação prática no SDLC e a cultura DevSecOps
 
 O Shift-Left começa no quadro branco, mas precisa ser operacionalizado no dia a dia. A ponte entre um desenho seguro e código seguro em produção é a cultura DevSecOps e a integração contínua de ferramentas de segurança ao longo do SDLC.
@@ -87,6 +112,16 @@ Em DevSecOps, a segurança não pode ser um obstáculo burocrático: ela opera n
 - **SAST (análise estática):** varre o código-fonte, quase em tempo real (no Pull Request), buscando antipadrões como hardcoding de credenciais, SQL Injection e XSS, com feedback imediato ao autor.
 - **SCA (análise de dependências):** mapeia toda a árvore de dependências e cruza as versões com as bases de vulnerabilidades conhecidas (CVEs), impedindo importar falhas públicas para o núcleo do software.
 - **DAST (análise dinâmica):** em staging, interage com a aplicação em execução pela perspectiva de um atacante externo, achando falhas de configuração, problemas de API e quebras de sessão que o SAST não detecta.
+
+```mermaid
+flowchart LR
+C["Commit"] --> PR["Pull Request"]
+PR --> SAST["SAST: código-fonte"]
+SAST --> SCA["SCA: dependências"]
+SCA --> B["Build"]
+B --> DAST["DAST: staging"]
+DAST --> Prod["Produção"]
+```
 
 ### Cultura e os Security Champions
 

@@ -9,6 +9,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BlogReactions from '@/components/BlogReactions';
 import BlogReferences from '@/components/BlogReferences';
+import Mermaid from '@/components/Mermaid';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useBlogPost } from '@/hooks/useBlogPosts';
@@ -83,6 +84,17 @@ const mdComponents = {
       {children}
     </h3>
   ),
+  // Desembrulha blocos ```mermaid``` e renderiza o diagrama no lugar do <pre>.
+  pre: ({ children }: { children?: ReactNode }) => {
+    const child = Children.toArray(children)[0];
+    if (
+      isValidElement<{ className?: string; children?: ReactNode }>(child) &&
+      /language-mermaid/.test(child.props.className || '')
+    ) {
+      return <Mermaid code={toText(child.props.children)} />;
+    }
+    return <pre>{children}</pre>;
+  },
 };
 
 const BlogPost = () => {

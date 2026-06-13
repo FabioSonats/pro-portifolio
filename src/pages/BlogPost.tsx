@@ -46,7 +46,8 @@ const extractToc = (markdown: string) => {
       continue;
     }
     if (inCode) continue;
-    const match = /^##(?!#)\s+(.+?)\s*$/.exec(line);
+    // Tolera ate 3 espacos de indentacao (regra de heading do CommonMark).
+    const match = /^\s{0,3}##(?!#)\s+(.+?)\s*$/.exec(line);
     if (match) {
       const text = match[1].trim();
       items.push({ text, id: slugify(text) });

@@ -172,7 +172,7 @@
   ARRAY['Segurança', 'IA', 'SAST', 'SCA'],
   12,
   'draft',
-  '2026-06-06T12:00:00Z',
+  '2026-06-17T12:00:00Z',
 $md$
 A engenharia de software atravessa uma transição profunda. A introdução de assistentes de codificação baseados em inteligência artificial, impulsionados por Large Language Models (LLMs), alterou a métrica de produtividade dos desenvolvedores. A IA escreve código na velocidade que a cognição humana consegue solicitar, reduzindo o time-to-market de forma drástica. Só que essa hipereficiência carrega um efeito colateral severo: a capacidade de escalar a introdução de código inseguro na mesma proporção.
 

@@ -7,6 +7,7 @@ SET
   excerpt = 'A IA escreve código na velocidade que você pede, e código inseguro na mesma proporção. Os três guardrails que separam a produtividade do desastre: gestão de segredos, SAST e SCA.',
   tags = ARRAY['Segurança', 'IA', 'SAST', 'SCA'],
   reading_minutes = 12,
+  published_at = '2026-06-17T12:00:00Z',
   content = $md$
 A engenharia de software atravessa uma transição profunda. A introdução de assistentes de codificação baseados em inteligência artificial, impulsionados por Large Language Models (LLMs), alterou a métrica de produtividade dos desenvolvedores. A IA escreve código na velocidade que a cognição humana consegue solicitar, reduzindo o time-to-market de forma drástica. Só que essa hipereficiência carrega um efeito colateral severo: a capacidade de escalar a introdução de código inseguro na mesma proporção.
 

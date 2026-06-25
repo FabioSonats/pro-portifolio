@@ -4,7 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import FloatingTechBackground from "./FloatingTechBackground";
 
 const HeroSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section className="min-h-screen flex items-center justify-center px-4 pt-20 bg-background relative overflow-hidden">
@@ -15,6 +15,9 @@ const HeroSection = () => {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight mb-6 text-foreground">
           <span className="text-foreground">{t('developer')}</span>
         </h1>
+        <p className="text-lg md:text-xl text-muted-foreground tracking-tight">
+          {language === 'pt-BR' ? 'Full Stack na Raizhe e Debug' : 'Full Stack at Raizhe and Debug'}
+        </p>
       </div>
     </section>
   );
